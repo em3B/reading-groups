@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_19_155904) do
+ActiveRecord::Schema.define(version: 2022_02_19_161842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["user_id"], name: "index_answers_on_user_id"
+  end
 
   create_table "daily_readings", force: :cascade do |t|
     t.bigint "text_id", null: false
@@ -24,17 +33,29 @@ ActiveRecord::Schema.define(version: 2022_02_19_155904) do
     t.index ["text_id"], name: "index_daily_readings_on_text_id"
   end
 
-  create_table "questions", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "daily_reading_id"
+  create_table "members", force: :cascade do |t|
+    t.bigint "reading_group_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["reading_group_id"], name: "index_members_on_reading_group_id"
+    t.index ["user_id"], name: "index_members_on_user_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "daily_reading_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["daily_reading_id"], name: "index_questions_on_daily_reading_id"
+    t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
   create_table "reading_groups", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_reading_groups_on_user_id"
   end
 
   create_table "texts", force: :cascade do |t|
@@ -59,6 +80,13 @@ ActiveRecord::Schema.define(version: 2022_02_19_155904) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answers", "questions"
+  add_foreign_key "answers", "users"
   add_foreign_key "daily_readings", "reading_groups"
   add_foreign_key "daily_readings", "texts"
+  add_foreign_key "members", "reading_groups"
+  add_foreign_key "members", "users"
+  add_foreign_key "questions", "daily_readings"
+  add_foreign_key "questions", "users"
+  add_foreign_key "reading_groups", "users"
 end
