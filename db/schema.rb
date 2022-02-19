@@ -10,10 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_19_152520) do
+ActiveRecord::Schema.define(version: 2022_02_19_155904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "daily_readings", force: :cascade do |t|
+    t.bigint "text_id", null: false
+    t.bigint "reading_group_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["reading_group_id"], name: "index_daily_readings_on_reading_group_id"
+    t.index ["text_id"], name: "index_daily_readings_on_text_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "daily_reading_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reading_groups", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "texts", force: :cascade do |t|
+    t.string "author"
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,4 +59,6 @@ ActiveRecord::Schema.define(version: 2022_02_19_152520) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "daily_readings", "reading_groups"
+  add_foreign_key "daily_readings", "texts"
 end
