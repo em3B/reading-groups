@@ -1,2 +1,0 @@
-class ReadingGroup < ApplicationRecord
-end
