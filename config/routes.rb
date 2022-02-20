@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   # student routes
-  resources :students do
+  resources :students, only: %i[show] do
     resources :reading_groups, only: %i[index show] do
       resources :daily_readings, through: :texts, only: %i[show] do
         resources :questions, only: %i[show] do
