@@ -1,8 +1,8 @@
 class ReadingGroupsController < ApplicationController
-  before_action :find_reading_group, only: %i[index show]
+  before_action :find_reading_group, only: %i[show]
 
   def index
-    @reading_group = ReadingGroup.where(user: current_user)
+    @reading_groups = ReadingGroup.where(user: current_user)
   end
 
   def show
