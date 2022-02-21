@@ -6,11 +6,11 @@ class DailyReadingsController < ApplicationController
 
   private
 
-  def find_booking
+  def find_daily_reading
     @daily_reading = DailyReading.find(params[:id])
   end
 
-  def booking_params
+  def daily_reading_params
     params.require(:daily_reading).permit(:text_id, :reading_group_id)
   end
 end
