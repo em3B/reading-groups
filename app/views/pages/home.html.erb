@@ -1,2 +1,18 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="landing-image" style="background-image: url(https://res.cloudinary.com/dm37aktki/image/upload/v1645451853/reading_offooz.png)">
+<div class="head">
+  <div id="logo">
+    <%= cl_image_tag("buzz_reads_r1zkbs") %>
+  </div>
+  <h1>Buzz Reads</h1>
+</div>
+<h1>Guided reading made easy</h1>
+<br>
+<button class="btn-home">Login</button>
+<div class="homepage-card">
+  <h1>Reading right today!</h1>
+</div>
+<div class="guided-reading-intro">
+  <h1>Why guided reading?</h1>
+  <h3>Small reading groups help each child focus on his/ her specific needs.</h3>
+</div>
+<%= link_to '<button class="btn-home">Login</button>'.html_safe, user_session_path %>

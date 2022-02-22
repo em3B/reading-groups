@@ -11,3 +11,66 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "components/sidebar";
+
+// colours
+$dyslexia_background: #FFFBF7;
+$lightest_blue: #E6F0F3;
+$light_blue: #C8E4EE;
+$light_orange: #F38A63;
+$coral: #F16B3A;
+$medium_orange: #DB6328;
+$dark_orange: #B13A1A;
+
+body, p, h1, h2, h3, h4, h5 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+// content for pages with sidebar
+.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+#logo img {
+  width: 50px;
+  height: 100%;
+}
+
+// landing page
+
+.landing-image {
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  color: white;
+  font-weight: bold;
+}
+.btn-home {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.head {
+  display: flex;
+  flex: 1;
+}
