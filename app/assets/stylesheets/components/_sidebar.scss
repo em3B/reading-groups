@@ -1,0 +1,51 @@
+// colours
+$dyslexia_background: #FFFBF7;
+$lightest_blue: #E6F0F3;
+$light_blue: #C8E4EE;
+$light_orange: #F38A63;
+$coral: #F16B3A;
+$medium_orange: #DB6328;
+$dark_orange: #B13A1A;
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: $lightest_blue;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  &:a {
+    display: block;
+    color: $dark_orange;
+    padding: 16px;
+    text-decoration: none;
+  }
+  &:a.active {
+    background-color: $dark_orange;
+    color: white;
+  }
+  &:a:hover:not(.active) {
+    background-color: $coral;
+    color: white;
+  }
+}
+
+// on screens less than 700px wide
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+// screens less than 400px
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
