@@ -5,13 +5,22 @@
   </div>
   <h1>Buzz Reads</h1>
 </div>
-<h1>Guided reading made easy</h1>
+<h1 class="ml-3">Guided reading made easy</h1>
 <br>
-<button class="btn-home">Login</button>
-<div class="homepage-card">
-  <h1>Reading right today!</h1>
+<%= link_to '<button class="btn-home ml-3">Login</button>'.html_safe, user_session_path %>
+<br>
+<br>
+<div class="signup-block">
+  <div class="homepage-card ml-3">
+    <h1>Reading right today!</h1>
+    <%= link_to '<button class="btn-home">Signup Now!</button>'.html_safe, new_user_session_path %>
+  </div>
+  <div class="guided-reading-intro">
+    <h1>Why guided reading?</h1>
+    <h3>Small reading groups help each child focus on his/ her specific needs.</h3>
+    <h3>Let technology transform your classroom reading groups!</h3>
+  </div>
 </div>
-<div class="guided-reading-intro">
-  <h1>Why guided reading?</h1>
-  <h3>Small reading groups help each child focus on his/ her specific needs.</h3>
-</div>
+
+<br>
+<h1 class="ml-3">Library Highlights</h1>
