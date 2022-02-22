@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_19_161842) do
+ActiveRecord::Schema.define(version: 2022_02_22_205303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2022_02_19_161842) do
     t.bigint "reading_group_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "excerpt"
     t.index ["reading_group_id"], name: "index_daily_readings_on_reading_group_id"
     t.index ["text_id"], name: "index_daily_readings_on_text_id"
   end
@@ -64,6 +65,7 @@ ActiveRecord::Schema.define(version: 2022_02_19_161842) do
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "cover_image"
   end
 
   create_table "users", force: :cascade do |t|
