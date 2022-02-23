@@ -1,26 +1,36 @@
 <div class="landing-image" style="background-image: url(https://res.cloudinary.com/dm37aktki/image/upload/v1645451853/reading_offooz.png)">
-<div class="head">
-  <div id="logo">
-    <%= cl_image_tag("buzz_reads_r1zkbs") %>
-  </div>
-  <h1>Buzz Reads</h1>
-</div>
-<h1 class="ml-3">Guided reading made easy</h1>
 <br>
-<%= link_to '<button class="btn-home ml-3">Login</button>'.html_safe, user_session_path %>
 <br>
 <br>
 <div class="signup-block">
-  <div class="homepage-card ml-3">
-    <h1>Reading right today!</h1>
+  <div class="homepage-card home-text ml-3">
+    <h3>Reading right today!</h3>
+    <br>
+    <br>
+    <br>
     <%= link_to '<button class="btn-home">Signup Now!</button>'.html_safe, new_user_session_path %>
   </div>
-  <div class="guided-reading-intro">
-    <h1>Why guided reading?</h1>
-    <h3>Small reading groups help each child focus on his/ her specific needs.</h3>
-    <h3>Let technology transform your classroom reading groups!</h3>
+  <div class="guided-reading-intro home-text mr-5">
+    <h3>Why guided reading?</h3>
+    <p>Small reading groups help each child focus on his/ her specific needs.</p>
+    <p>Let technology transform your classroom reading groups!</p>
   </div>
 </div>
 
+<%# book cover samples %>
 <br>
-<h1 class="ml-3">Library Highlights</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 class="home-text ml-3">Library</h1>
+<div class="cover-images">
+  <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645566231/development/65w3tdfn58fv1yc7piadykpykx21.jpg") %>
+</div>
+
+<%# footer %>
+<%= render "shared/footer" %>

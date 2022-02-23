@@ -26,6 +26,12 @@ body, p, h1, h2, h3, h4, h5 {
   font-family: 'Montserrat', sans-serif;
 }
 
+// footer
+.footer {
+  background-color: $dark_orange;
+  color: white;
+}
+
 // content for pages with sidebar
 .content {
   margin-left: 200px;
@@ -45,7 +51,7 @@ body, p, h1, h2, h3, h4, h5 {
   min-width: 1024px;
   width: 100%;
   height: auto;
-  position: fixed;
+  background-attachment: fixed;
   top: 0;
   left: 0;
   background-position: center;
@@ -53,7 +59,7 @@ body, p, h1, h2, h3, h4, h5 {
   background-size: cover;
 }
 
-h1, h3 {
+.home-text {
   color: white;
   font-weight: bold;
 }
@@ -72,7 +78,7 @@ h1, h3 {
 
 .head {
   display: flex;
-  flex: 1;
+  flex: 2;
 }
 
 .signup-block {
@@ -82,15 +88,31 @@ h1, h3 {
 
 .homepage-card {
   width: 100%;
-  height: 700px;
+  height: 500px;
   background-image: url("https://res.cloudinary.com/dm37aktki/image/upload/v1645563441/zoe-Zd04s9gyYzA-unsplash_toy29m.jpg");
   background-repeat: no-repeat;
   background-size: contain;
   position: relative;
   left: 40%;
   transform: translate(-50%);
+  padding: 10px;
 
   // width: calc(100% - 100px);
   // max-width: 1200px;
   // z-index: 100;
+}
+
+.guided-reading-intro {
+  padding: 10px;
+  background-color: $dark_orange;
+  opacity: 0.8;
+  border-radius: 4px;
+}
+
+.cover-images img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 200px;
+  margin: 10px;
 }

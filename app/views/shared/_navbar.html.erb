@@ -1,6 +1,12 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <div class="head">
+      <div id="logo">
+        <%= cl_image_tag("buzz_reads_r1zkbs") %>
+      </div>
+      <h1>Buzz Reads</h1>
+      <p><em>Guided Reading Made Easy</em></p>
+    </div>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
