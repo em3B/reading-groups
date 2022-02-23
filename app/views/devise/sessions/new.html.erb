@@ -1,13 +1,11 @@
 
 <br>
-<br>
-<br>
+
 
 <h2 class="text-center font-weight-bold text-white">Log in</h2>
 
 <br>
-<br>
-<br>
+
 <div class="login-form">
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
@@ -33,3 +31,5 @@
 
   <%= render "devise/shared/links" %>
 </div>
+
+<%= render "shared/footer" %>
