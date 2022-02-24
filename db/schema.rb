@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_24_181317) do
+ActiveRecord::Schema.define(version: 2022_02_24_203457) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,12 +72,11 @@ ActiveRecord::Schema.define(version: 2022_02_24_181317) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.bigint "daily_reading_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "content"
     t.index ["daily_reading_id"], name: "index_questions_on_daily_reading_id"
-    t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
   create_table "reading_groups", force: :cascade do |t|
@@ -104,9 +103,9 @@ ActiveRecord::Schema.define(version: 2022_02_24_181317) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "role"
     t.integer "teacher_id"
     t.string "school_name"
+    t.boolean "teacher"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -120,6 +119,5 @@ ActiveRecord::Schema.define(version: 2022_02_24_181317) do
   add_foreign_key "members", "reading_groups"
   add_foreign_key "members", "users"
   add_foreign_key "questions", "daily_readings"
-  add_foreign_key "questions", "users"
   add_foreign_key "reading_groups", "users"
 end
