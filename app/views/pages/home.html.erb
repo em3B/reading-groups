@@ -1,56 +1,54 @@
-<div class="landing-image" style="background-image: url(https://res.cloudinary.com/dm37aktki/image/upload/v1645451853/reading_offooz.png)">
-<br>
-<br>
-<br>
-<%# subscription options %>
-<div class="subscription-btn-group">
-  <button class="subscription-btn">
-    <div class="subscription-img">
-      <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645639935/Vector_illustration_of_High_school_building._Vector_School_Building_jcowx0.jpg") %>
-    </div>
-    <h4>School Subscription</h4>
-  </button>
-  <button class="subscription-btn">
-    <div class="subscription-img">
-      <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645639907/Depositphotos_264171728_S_yf3twi.jpg") %>
-    </div>
-    <h4>Family Subscription</h4>
-  </button>
-  <button class="subscription-btn">
-    <div class="subscription-img">
-      <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645639917/Depositphotos_57293061_S_mnbcls.jpg") %>
-    </div>
-    <h4>Free Demo</h4>
-  </button>
-</div>
-
-<%# signup %>
-<div class="guided-reading-intro mr-5">
-  <h3>Why guided reading online?</h3>
+<div class="wrapper">
+  <div class="landing-image" style="background-image: url(https://res.cloudinary.com/dm37aktki/image/upload/v1645451853/reading_offooz.png)">
   <br>
-  <p>🖍 Easy assessment with no unneeded paper fuss!</p>
   <br>
-  <p>📚 No more buying hundreds of books for your class readings.</p>
   <br>
-  <p>🙋🏽‍♀️ Easily learn to communicate about reading together.</p>
-  <%= link_to '<button class="btn-home ml-5">Signup Now!</button>'.html_safe, new_user_registration_path %>
+  <%# subscription options %>
+    <div class="subscription-btn-group">
+      <button class="subscription-btn">
+        <div class="subscription-img">
+          <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645639935/Vector_illustration_of_High_school_building._Vector_School_Building_jcowx0.jpg") %>
+        </div>
+        <h4>School Subscription</h4>
+      </button>
+      <button class="subscription-btn">
+        <div class="subscription-img">
+          <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645639907/Depositphotos_264171728_S_yf3twi.jpg") %>
+        </div>
+        <h4>Family Subscription</h4>
+      </button>
+      <button class="subscription-btn">
+        <div class="subscription-img">
+          <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645639917/Depositphotos_57293061_S_mnbcls.jpg") %>
+        </div>
+        <h4>Free Demo</h4>
+      </button>
+    </div>
+
+    <%# signup %>
+    <div class="guided-reading-intro mr-5">
+      <h3>Why guided reading online?</h3>
+      <br>
+      <p>🖍 Easy assessment with no unneeded paper fuss!</p>
+      <br>
+      <p>📚 No more buying hundreds of books for your class readings.</p>
+      <br>
+      <p>🙋🏽‍♀️ Easily learn to communicate about reading together.</p>
+      <%= link_to '<button class="btn-home ml-5">Signup Now!</button>'.html_safe, new_user_registration_path %>
+    </div>
+
+
+    <%# book cover samples %>
+
+    <br>
+    <br>
+    <h1 class="home-text ml-3">Library</h1>
+    <div class="cover-images">
+      <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645566231/development/65w3tdfn58fv1yc7piadykpykx21.jpg") %>
+      <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645626730/tim-alex-xG5VJW-7Bio-unsplash_xtdpe3.jpg") %>
+    </div>
+    <br>
+    <br>
+  </div>
+  <div class="push"></div>
 </div>
-
-
-<%# book cover samples %>
-
-<br>
-<br>
-<h1 class="home-text ml-3">Library</h1>
-<div class="cover-images">
-  <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645566231/development/65w3tdfn58fv1yc7piadykpykx21.jpg") %>
-  <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645626730/tim-alex-xG5VJW-7Bio-unsplash_xtdpe3.jpg") %>
-</div>
-<br>
-<br>
-<br>
-<br>
-
-
-<%# footer %>
-<%= render "shared/footer" %>
