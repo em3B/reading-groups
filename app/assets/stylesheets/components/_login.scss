@@ -1,13 +1,26 @@
 .login-form {
   width: 50%;
-  position: fixed;
-  left: 25%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
   background-color: $light_blue;
-  padding: 20px;
+  padding: 40px;
   border-radius: 7px;
+  margin-bottom: 24px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
-body {
+.wrapper {
   background-color: $coral;
+  margin-bottom: -100px;
+  min-height: 100%;
+}
+
+.push {
+  height: 100px;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
 }

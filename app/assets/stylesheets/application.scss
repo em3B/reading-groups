@@ -27,6 +27,11 @@ body, p, h1, h2, h3, h4, h5 {
   font-family: 'Montserrat', sans-serif;
 }
 
+html, body {
+  height: 100%;
+  margin: 0px;
+}
+
 // footer
 .footer {
   background-color: $light_blue;
@@ -36,8 +41,6 @@ body, p, h1, h2, h3, h4, h5 {
   height: 100px;
   width: 100%;
   padding: 0px 50px;
-  position: fixed;
-  bottom: 0px;
 }
 
 .footer-links {
@@ -70,16 +73,17 @@ body, p, h1, h2, h3, h4, h5 {
 // landing page
 
 .landing-image {
-  min-height: 100%;
+  // min-height: 100%;
   min-width: 1024px;
   width: 100%;
-  height: auto;
+  height: 100%;
   background-attachment: fixed;
   top: 0;
   left: 0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  // margin-bottom: -100px;
 }
 
 .home-text {
