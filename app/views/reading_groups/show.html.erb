@@ -8,7 +8,8 @@
   </div>
 <%# 3. space for question/ answer popup %>
   <div class="popups">
-    <% @reading_group.questions each do |question| %>
+    <% raise %>
+    <% @reading_group.questions.each do |question| %>
       <% if question.active?  %>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
