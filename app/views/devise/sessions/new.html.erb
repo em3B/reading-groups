@@ -1,35 +1,37 @@
 
-<br>
 
+<div class="wrapper">
+  <h2 class="text-center font-weight-bold text-white py-5">Log in</h2>
 
-<h2 class="text-center font-weight-bold text-white">Log in</h2>
+  <div class="login-form">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" } %>
+        <%= f.input :password,
+                    required: false,
+                    input_html: { autocomplete: "current-password" } %>
+        <p>I am a...</p>
+        <%= f.input :teacher,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            :collection => ["Student", "Teacher"] %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <%= f.label(:school_name, "School Code (optional)") %>
+        <%= f.text_field :school_name %>
+      </div>
 
-<br>
+      <div class="form-actions">
+        <%= f.button :submit, "Log in", class: "btn btn-default btn-primary" %>
+      </div>
+    <% end %>
 
-<div class="login-form">
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: false,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" } %>
-      <%= f.input :password,
-                  required: false,
-                  input_html: { autocomplete: "current-password" } %>
-      <p>I am a...</p>
-      <%=  radio_button_tag(:role, "Student") %>
-      <%= f.label(:role, "Student") %>
-      <%=  radio_button_tag(:role, "Teacher") %>
-      <%= f.label(:role, "Teacher") %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-    </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Log in", class: "btn btn-default btn-primary" %>
-    </div>
-  <% end %>
-
-  <%= render "devise/shared/links" %>
+    <%= render "devise/shared/links" %>
+  </div>
+  <div class="push"></div>
 </div>
-
-<%= render "shared/footer" %>
