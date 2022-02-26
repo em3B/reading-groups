@@ -121,6 +121,7 @@ html, body {
   border-radius: 7px;
   padding: 40px;
   margin: 50px;
+  width: 250px;
   background-color: $lightest_blue;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   &:hover {
@@ -152,7 +153,7 @@ html, body {
 
 .guided-reading-intro {
   padding: 10px;
-  background-color: $light_orange;
+  background-color: $lightest_blue;
   opacity: 0.9;
   border-radius: 7px;
   width: 300px;
@@ -169,5 +170,6 @@ html, body {
   padding: 5px;
   width: 200px;
   height: 300px;
-  margin: 10px;
+  margin: 24px;
+  align-items: center;
 }
