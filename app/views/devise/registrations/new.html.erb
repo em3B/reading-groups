@@ -19,10 +19,15 @@
                     required: true,
                     input_html: { autocomplete: "new-password" } %>
         <p>I am a...</p>
-        <%=  radio_button_tag(:role, "Student") %>
-        <%= f.label(:role, "Student") %>
-        <%=  radio_button_tag(:role, "Teacher") %>
-        <%= f.label(:role, "Teacher") %>
+        <%= f.input :teacher,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            :collection => ["Student", "Teacher"] %>
+        <%= f.label(:school_name, "School Code (optional)") %>
+        <%= f.text_field :school_name %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
 

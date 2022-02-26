@@ -24,3 +24,77 @@
   display: flex;
   flex-direction: column;
 }
+
+.btn.btn-default.btn-primary {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient($coral, $dark_orange);
+  transition: background 0.3s ease;
+  border: 1px solid $dark_orange;
+  margin: 10px;
+  width: 30%;
+  &:hover {
+    background: linear-gradient($coral, $dark_orange);
+    color: white;
+    opacity: .8;
+  }
+}
+
+.category-wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.category-item {
+  flex: 0 0 30%;
+}
+
+.category-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.category-selector + label {
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  // font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 10px 30px 10px;
+  border: 1px solid #EAEAEA;
+  border-radius: 7px;
+  background-color: $light_orange;
+}
+
+.category-selector:checked + label {
+  color: white !important;
+  background-color: $dark_orange;
+}
+
+.col-form-label {
+  display: none;
+}
+
+// #category_student + label {
+//   color: #FD1015;
+// }
+
+// #category_student:checked + label {
+//   background-color: #FD1015;
+//   border-color: #FD1015;
+// }
+
+
+// #category_teacher + label {
+//   color: #FFC65A;
+// }
+
+// #category_teacher:checked + label {
+//   background-color: #FFC65A;
+//   border-color: #FFC65A;
+// }
