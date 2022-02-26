@@ -13,14 +13,6 @@
         <%= f.input :password,
                     required: false,
                     input_html: { autocomplete: "current-password" } %>
-        <p>I am a...</p>
-        <%= f.input :teacher,
-            as: :radio_buttons,
-            collection_wrapper_tag: 'div',
-            collection_wrapper_class: 'category-wrapper',
-            item_wrapper_class: 'category-item',
-            input_html: {class: 'category-selector'},
-            :collection => ["Student", "Teacher"] %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         <%= f.label(:school_name, "School Code (optional)") %>
         <%= f.text_field :school_name %>
