@@ -13,3 +13,17 @@ Rails.application.routes.draw do
   resources :reading_groups
 end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+
+# 10.times do
+#   User.create!(
+#     email: Faker::Internet.email,
+#     password: '123456'
+#   )
+# end
+
+# 10.times do
+#   ReadingGroup.create!(
+#     user: User.all.sample
+#   )
+# end
