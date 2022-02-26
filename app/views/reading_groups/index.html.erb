@@ -1,2 +1,10 @@
-"TEST"
-<%= link_to "My Reading Group", reading_group_path(2) %>
+<div class="wrapper">
+  <h1 class="text-center font-weight-bold">Welcome to Buzz Reads</h1>
+  <div class="subscription-btn-group">
+    <div class="subscription-btn text-center">
+      <div class="subscription-img"><%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645889143/rcLnnE6pi_oa5si0.png")  %></div>
+      <div class="fancy-link text-center"><%= link_to "My Reading Group", reading_group_path(2) %></div>
+    </div>
+  </div>
+<div class="push"></div>
+</div>
