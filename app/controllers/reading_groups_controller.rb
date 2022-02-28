@@ -2,7 +2,13 @@ class ReadingGroupsController < ApplicationController
   before_action :find_reading_group, only: %i[show]
 
   def index
-    @reading_groups = ReadingGroup.where(user: current_user)
+    @reading_groups = []
+    ReadingGroup.all.each do |rg|
+      if rg.users.include?(current_user)
+        @reading_groups << rg
+      end
+    end
+    @reading_groups
   end
 
   def show
