@@ -1,4 +1,7 @@
 <div class="sidebar">
-  <%# <%= link_to "Today", student_reading_group_daily_reading_path(@daily_reading) %> %>
-  <%# <%= link_to "Another Date", student_reading_group_daily_reading_path(@daily_reading) %> %>
+  <%= link_to "Yesterday", "#" %>
+  <div class="active">
+    <%= link_to "Today", reading_groups_path(@reading_group) %>
+  </div>
+  <%= link_to "Tomorrow", "#" %>
 </div>

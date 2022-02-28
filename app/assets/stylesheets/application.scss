@@ -13,6 +13,7 @@
 @import "pages/index";
 @import "components/sidebar";
 @import "components/login";
+@import "components/daily_show";
 
 // colours
 $dyslexia_background: #FFFBF7;
@@ -30,6 +31,34 @@ body, p, h1, h2, h3, h4, h5 {
 html, body {
   height: 100%;
   margin: 0px;
+}
+
+.btn-primary {
+  background-color: $light_blue;
+  color: $dark_orange;
+  font-weight: bolder;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  &:hover {
+    box-shadow: inset 1px 2px 5px #777;
+    background-color: $lightest_blue;
+    color: $dark_orange;
+    transform: translateY(1px);
+  }
+  &:active {
+    box-shadow: inset 1px 2px 5px #777;
+    background-color: $lightest_blue;
+    color: $dark_orange;
+    transform: translateY(1px);
+  }
+  &:focus {
+    box-shadow: inset 1px 2px 5px #777;
+    background-color: $lightest_blue;
+    color: $dark_orange;
+    transform: translateY(1px);
+  }
 }
 
 // links
@@ -93,6 +122,10 @@ html, body {
   height: 100px;
   width: 100%;
   padding: 0px 50px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .footer-links {
