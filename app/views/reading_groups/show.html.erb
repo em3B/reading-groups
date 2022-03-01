@@ -82,5 +82,19 @@
   </div>
   <%# extension question %>
 </div>
+<%# chat box %>
+<button class="open-button" type="button">Chat</button>
+
+<div class="chat-popup form-container" id="myForm">
+  <%= simple_form_for(@reading_group) do |f| %>
+    <h1>Chat</h1>
+
+    <%= f.label :questions, "Message" %>
+    <%= f.text_area :questions %>
+
+    <button type="submit" class="btn-chat">Send</button>
+    <button type="button" id="btn-cancel">Close</button>
+  <% end %>
+</div>
 <div class="push"></div>
 </div>
