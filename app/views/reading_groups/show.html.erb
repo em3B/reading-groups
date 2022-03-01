@@ -12,17 +12,17 @@
   </div>
   <%# question column %>
   <div class="daily-questions">
-    <% @reading_group.questions.all.each do |question|%>
+    <% @reading_group.questions.each_with_index do |question, i|%>
     <%# for non extension questions %>
           <!-- Button trigger modal -->
       <% if question.extension == false  %>
         <div class="question-buttons">
-          <button type="button" class="modal-questions-btn" data-toggle="modal" data-target="#exampleModal">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#questionModal-<%=i%>">
             Question
           </button>
         </div>
                 <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="questionModal-<%=i%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
