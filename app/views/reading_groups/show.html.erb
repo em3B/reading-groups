@@ -12,7 +12,7 @@
   </div>
   <%# question column %>
   <div class="daily-questions">
-    <% @reading_group.questions.all.each do |question|%>
+    <% @reading_group.questions.each do |question|%>
     <%# for non extension questions %>
           <!-- Button trigger modal -->
       <% if question.extension == false  %>
@@ -31,17 +31,21 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
-                <form>
+                <div class="modal-body">
                   <div class="mb-3">
-                    <label for="recipient-name" class="col-form-label">My Answer:</label>
-                    <input type="text" class="form-control" id="student-answer">
+                    <%= form_for(@answer) do |f| %>
+                      <%= f.hidden_field :question_id, value: question.id %>
+                      <%= f.hidden_field :reading_group_id, value: @reading_group.id %>
+                      <%= f.label :content, class: "col-form-label" %>
+                      <%= f.text_field :content, class: "form-control", id: "student-answer" %>
+                      <%= f.submit %>
+                    <% end %>
                   </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
+                </div>
+                <%# <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div> %>
             </div>
           </div>
         </div>
