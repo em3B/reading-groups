@@ -1,12 +1,15 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="display: table;">
   <%= link_to :root, class: "navbar-brand" do %>
-    <div class="head">
-      <div id="logo">
-        <%= cl_image_tag("buzz_reads_r1zkbs") %>
-      </div>
-      <h1>Buzz Reads</h1>
-      <p><em>Guided Reading Made Easy</em></p>
+    <div id="logo" style="display: table-cell;">
+      <%= cl_image_tag("buzz_reads_r1zkbs") %>
     </div>
+    <div class="head-title p-2" style="display: table-cell;">
+      <h1>Buzz Reads</h1>
+    </div>
+    <div class="head-tagline" style="display: table-cell;">
+      <p>Guided Reading Made Easy</p>
+    </div>
+
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +17,7 @@
   </button>
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="display: table-cell;">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active fancy-link m-3">
