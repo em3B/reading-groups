@@ -58,6 +58,16 @@ $dark_orange: #B13A1A;
   margin-bottom:10px;
   opacity: 0.8;
 }
+#btn-cancel {
+  background-color: $dark_orange;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
 .form-container .btn-chat:hover, .open-button:hover {
   opacity: 1;
 }
