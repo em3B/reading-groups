@@ -16,20 +16,28 @@ $dark_orange: #B13A1A;
   // bottom: 100px;
   height: 100%;
   overflow: auto;
-  &:a {
-    display: block;
-    color: $dark_orange;
-    padding: 16px;
-    text-decoration: none;
-  }
-  &:a.active {
+}
+.sidebar-links a {
+  display: block;
+  color: $dark_orange;
+  padding: 16px;
+  text-decoration: none;
+  &::selection {
     background-color: $dark_orange;
     color: white;
   }
-  &:a:hover:not(.active) {
-    background-color: $coral;
-    color: white;
-  }
+}
+.sidebar-links a:hover {
+  background-color: $dark_orange;
+  color: white;
+}
+.sidebar-links a:active {
+  background-color: $dark_orange;
+  color: white;
+}
+.sidebar-links a:focus {
+  background-color: $dark_orange;
+  color: white;
 }
 
 // on screens less than 700px wide
