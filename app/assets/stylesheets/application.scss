@@ -34,7 +34,7 @@ html, body {
   margin: 0px;
 }
 
-.btn-primary {
+.modal-questions-btn {
   background-color: $light_blue;
   color: $dark_orange;
   font-weight: bolder;
@@ -194,6 +194,9 @@ html, body {
 .head {
   display: flex;
   flex: 2;
+}
+.head-text {
+  
 }
 
 // subcription button row of home
