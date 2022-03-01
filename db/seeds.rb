@@ -205,10 +205,18 @@ counter = 0
   Question.create!(
     daily_reading: DailyReading.first,
     content: QUESTION_CONTENTS[counter],
-    active: true
+    active: true,
+    extension: false
   )
   counter += 1
 end
+
+Question.create!(
+  daily_reading: DailyReading.first,
+  content: "Rewrite the chapter from the perspective of Mr. Dursley.",
+  active: true,
+  extension: true
+)
 
 puts "Done!"
 

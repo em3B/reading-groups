@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_26_130635) do
+ActiveRecord::Schema.define(version: 2022_03_01_122313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2022_02_26_130635) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "content"
     t.boolean "active"
+    t.boolean "extension"
     t.index ["daily_reading_id"], name: "index_questions_on_daily_reading_id"
   end
 
