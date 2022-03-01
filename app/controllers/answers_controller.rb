@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  before_action :find_answer, only: %i[show new create update]
+  before_action :find_answer, only: %i[show update]
 
   def show
   end
@@ -11,11 +11,11 @@ class AnswersController < ApplicationController
 
   def create
     @answer = Answer.new(answer_params)
-    @question = Question.find(params[:question_id])
-    @answer.question = @question
+    # @question = Question.find(params[:question_id])
+    # @answer.question = @question
     @answer.user = current_user
-    if @question.save
-      redirect_to student_reading_group_daily_reading_path
+    if @answer.save
+      redirect_to reading_group_path(params[:answer][:reading_group_id].to_i)
     else
       render :new
     end
@@ -38,7 +38,7 @@ class AnswersController < ApplicationController
   end
 
   def answer_params
-    params.require(:answer).permit(:user_id, :question_id)
+    params.require(:answer).permit(:question_id, :content)
   end
 
 end
