@@ -12,6 +12,7 @@ class ReadingGroupsController < ApplicationController
   end
 
   def show
+    @answer = Answer.new
   end
 
   private
