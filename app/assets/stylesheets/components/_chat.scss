@@ -18,6 +18,9 @@ $dark_orange: #B13A1A;
   bottom: 100px;
   left: 0px;
   width: 200px;
+  &:hover {
+    cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
+  }
 }
 
 .chat-popup {
@@ -27,11 +30,13 @@ $dark_orange: #B13A1A;
   left: 0px;
   border: 3px solid #f1f1f1;
   z-index: 9;
+  cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
 }
 .form-container {
   max-width: 300px;
   padding: 10px;
   background-color: white;
+  cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
 }
 .form-container textarea {
   width: 100%;
@@ -42,7 +47,9 @@ $dark_orange: #B13A1A;
   resize: none;
   min-height: 200px;
 }
-
+.close:hover {
+  cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
+}
 /* When the textarea gets focus, do something */
 .form-container textarea:focus {
   background-color: #ddd;
@@ -57,6 +64,9 @@ $dark_orange: #B13A1A;
   width: 100%;
   margin-bottom:10px;
   opacity: 0.8;
+  &:hover{
+    cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
+  }
 }
 #btn-cancel {
   background-color: $dark_orange;
@@ -67,6 +77,9 @@ $dark_orange: #B13A1A;
   width: 100%;
   margin-bottom:10px;
   opacity: 0.8;
+  &:hover {
+    cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
+  }
 }
 .form-container .btn-chat:hover, .open-button:hover {
   opacity: 1;

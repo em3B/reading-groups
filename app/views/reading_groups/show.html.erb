@@ -34,12 +34,12 @@
               </div>
                 <div class="modal-body">
                   <div class="mb-3">
-                    <%= form_for(@answer) do |f| %>
+                    <%= simple_form_for(@answer) do |f| %>
                       <%= f.hidden_field :question_id, value: question.id %>
                       <%= f.hidden_field :reading_group_id, value: @reading_group.id %>
                       <%= f.label :content, class: "col-form-label" %>
                       <%= f.text_field :content, class: "form-control", id: "student-answer" %>
-                      <%= f.submit %>
+                      <%= f.submit class: "modal-questions-btn m-3"%>
                     <% end %>
                   </div>
               </div>
