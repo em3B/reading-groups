@@ -32,6 +32,13 @@ body, p, h1, h2, h3, h4, h5 {
 html, body {
   height: 100%;
   margin: 0px;
+  cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
+}
+a {
+  cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
+}
+.btn:not(:disabled):not(.disabled) {
+  cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
 }
 
 .modal-questions-btn {
@@ -47,18 +54,21 @@ html, body {
     background-color: $lightest_blue;
     color: $dark_orange;
     transform: translateY(1px);
+    cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
   }
   &:active {
     box-shadow: inset 1px 2px 5px #777;
     background-color: $lightest_blue;
     color: $dark_orange;
     transform: translateY(1px);
+    cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
   }
   &:focus {
     box-shadow: inset 1px 2px 5px #777;
     background-color: $lightest_blue;
     color: $dark_orange;
     transform: translateY(1px);
+    cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
   }
 }
 
@@ -187,6 +197,7 @@ html, body {
   &:hover {
     box-shadow: inset 1px 2px 5px #777;
     transform: translateY(1px);
+    cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
   }
 }
 
@@ -217,6 +228,7 @@ html, body {
   &:hover {
     box-shadow: inset 1px 2px 5px #777;
     transform: translateY(3px);
+    cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
   }
 }
 
