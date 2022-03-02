@@ -9,7 +9,7 @@
   <%# text column %>
   <div class="daily-text">
     <h1 class="text-center m-5">Today is <%= Date.today.day %>/<%= Date.today.mon  %></h1>
-    <%= @reading_group.daily_readings.last.excerpt %>
+    <p style="white-space: pre-line;"><%= @reading_group.daily_readings.first.excerpt %></p>
   </div>
   <%# question column %>
   <div class="daily-questions">
