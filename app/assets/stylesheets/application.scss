@@ -214,7 +214,7 @@ a {
 .subscription-btn-group {
   display: flex;
   flex: 1;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding-bottom: 200px;
 }
 
@@ -222,7 +222,8 @@ a {
   border-radius: 7px;
   padding: 40px;
   margin: 50px;
-  width: 250px;
+  height: 300px;
+  width: 300px;
   background-color: $lightest_blue;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   &:hover {
@@ -259,12 +260,17 @@ a {
   background-color: $lightest_blue;
   opacity: 0.9;
   border-radius: 7px;
-  width: 300px;
+  width: 80%;
   height: 100%;
   position: relative;
-  left: 75%;
-  margin-bottom: 200px;
+  left: 10%;
+  margin-top: 75px;
+  line-height: 5;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.c-2-a {
+  margin-top: 200px;
 }
 // library section of home
 
