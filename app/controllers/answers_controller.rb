@@ -10,6 +10,7 @@ class AnswersController < ApplicationController
   end
 
   def create
+    raise
     @answer = Answer.new(answer_params)
     # @question = Question.find(params[:question_id])
     # @answer.question = @question
