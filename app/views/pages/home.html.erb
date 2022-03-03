@@ -1,6 +1,12 @@
 <div class="wrapper">
   <div class="landing-image" style="background-image: url(https://res.cloudinary.com/dm37aktki/image/upload/v1645451853/reading_offooz.png)">
   <br>
+  <div class="guided-reading-intro c-2-a">
+      <h1>Why guided reading online?</h1>
+      <h1>🖍 Easy assessment with no unneeded paper fuss!</h1>
+      <h1>📚 No more buying hundreds of books for your class readings.</h1>
+      <h1>🙋🏽‍♀️ Easily learn to communicate about reading together.</h1>
+    </div>
   <br>
   <br>
   <%# subscription options %>
@@ -21,12 +27,12 @@
         <div class="subscription-img">
           <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645639917/Depositphotos_57293061_S_mnbcls.jpg") %>
         </div>
-        <h4 class="fancy-link"><%= link_to "Free Demo", "#" %></h4>
+        <h4 class="fancy-link"><%= link_to "Free Demo", reading_groups_path %></h4>
       </button>
     </div>
 
     <%# signup %>
-    <div class="guided-reading-intro mr-5">
+    <%# <div class="guided-reading-intro mr-5">
       <h3>Why guided reading online?</h3>
       <br>
       <p>🖍 Easy assessment with no unneeded paper fuss!</p>
@@ -35,7 +41,7 @@
       <br>
       <p>🙋🏽‍♀️ Easily learn to communicate about reading together.</p>
       <%= link_to '<button class="btn-home ml-5">Signup Now!</button>'.html_safe, new_user_registration_path %>
-    </div>
+    <%# </div> %> %>
 
 
     <%# book cover samples %>

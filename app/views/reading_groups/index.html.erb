@@ -1,6 +1,7 @@
 <div class="wrapper">
   <div class="push"></div>
   <h1 class="text-center font-weight-bold text-white pt-5">Welcome, <%= current_user.name  %>!</h1>
+  <h1 class="text-center font-weight-bold text-white pt-5">Choose Your Reading Below:</h1>
   <div class="subscription-btn-group">
     <% @reading_groups.each do |rg| %>
       <% rg.daily_readings.each do |dr| %>
