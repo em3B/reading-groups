@@ -10,12 +10,12 @@ class AnswersController < ApplicationController
   end
 
   def create
-    raise
     @answer = Answer.new(answer_params)
     # @question = Question.find(params[:question_id])
     # @answer.question = @question
     @answer.user = current_user
     if @answer.save
+      flash[:notice] = "Answer saved!"
       redirect_to reading_group_path(params[:answer][:reading_group_id].to_i)
     else
       render :new
