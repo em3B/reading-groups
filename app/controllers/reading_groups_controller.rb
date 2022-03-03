@@ -8,7 +8,6 @@ class ReadingGroupsController < ApplicationController
         @reading_groups << rg
       end
     end
-    @reading_groups
   end
 
   def show
@@ -25,3 +24,8 @@ class ReadingGroupsController < ApplicationController
     params.require(:reading_group).permit(:user_id)
   end
 end
+
+# @reading_group = ReadingGroup.find(params[:id])
+    # @daily_reading = DailyReading.find(params[:daily_reading_id])
+    # @reading_group.daily_reading = @daily_reading
+    # @reading_group.user = current_user
