@@ -1,13 +1,12 @@
 <div class="wrapper">
 <div class="push"></div>
-
 <%# text and question together %>
 <div class="content">
   <%# text column %>
   <%= content_tag :p, flash[:notice], :class => "flash notice" if flash[:notice] %>
   <div class="daily-text">
     <h1 class="text-center m-5">Today is <%= Date.today.day %>/<%= Date.today.mon  %></h1>
-    <p class="text-justify" style="white-space: pre-line;"><%= @reading_group.daily_readings.first.excerpt %></p>
+    <p class="text-justify"><%= @reading_group.daily_readings.first.excerpt %></p>
   </div>
   <%# question column %>
   <div class="daily-questions">
@@ -43,7 +42,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="modal-questions-btn">Save changes</button>
+
               </div>
             </div>
           </div>

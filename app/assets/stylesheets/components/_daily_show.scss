@@ -13,12 +13,10 @@ $dark_orange: #B13A1A;
 .daily-text {
   display: table-cell;
   background-color: $dyslexia_background;
-  width: 100%;
-  line-height: 1.8;
-  margin: 40px;
-  padding: 80px;
+  // width: 100%;
+  line-height: 2.4;
+  padding: 120px;
   font-size: 16px;
-  text-align: justify;
 }
 
 .daily-questions {
