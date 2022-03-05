@@ -8,5 +8,6 @@ class User < ApplicationRecord
   has_many :answers
   has_many :reading_groups, through: :members
   has_many :questions, through: :answers
-
+  has_many :messages
+  has_many :chatrooms, through: :messages
 end

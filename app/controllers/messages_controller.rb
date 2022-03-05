@@ -11,10 +11,15 @@ class MessagesController < ApplicationController
     @message.user = current_user
     if @message.save
       flash[:notice] = "Message sent!"
-      redirect_to daily_reading_path(@chatroom, anchor: "message-#{@message.id}")
+      # redirect_to daily_reading_path(@chatroom, anchor: "message-#{@message.id}")
     else
       render "daily_readings/show"
     end
+
+    ChatroomChannel.broadcast_to(
+      @chatroom,
+      render_to_string(partial: "message", locals: { message: @message })
+    )
   end
 
   private
