@@ -3,11 +3,17 @@
   <h1 class="text-center font-weight-bold text-white pt-5">Welcome, <%= current_user.name  %>!</h1>
   <h1 class="text-center font-weight-bold text-white pt-5">Choose Your Reading Group Below:</h1>
   <div class="subscription-btn-group">
+
     <% @reading_groups.each do |rg| %>
-      <div class="subscription-btn text-center">
-        <div class="subscription-img"><%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645889143/rcLnnE6pi_oa5si0.png")  %></div>
-        <div class="fancy-link text-center"><%= link_to rg.id, reading_group_path(rg.id) %></div>
-      </div>
+
+      <%= link_to reading_group_path(rg.id) do %>
+        <div class="subscription-btn text-center #{rg_button}">
+          <div class="subscription-img"><%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645889143/rcLnnE6pi_oa5si0.png")  %></div>
+          <h3 class="text-center">Reading Group:<br></h3>
+          <h3 class="text-center"><%= rg.id  %></h3>
+        </div>
+      <% end %>
+
     <% end %>
   </div>
 <div class="push"></div>

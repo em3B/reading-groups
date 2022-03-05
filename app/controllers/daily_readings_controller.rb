@@ -9,6 +9,9 @@ class DailyReadingsController < ApplicationController
   end
 
   def show
+    @answer = Answer.new
+    @chatroom = Chatroom.find(params[:id])
+    @message = Message.new
     # @questions = @daily_reading.questions
     # @answer = Answer.where(daily_reading_id: params[:id], user: current_user) || Answer.new
     # @answer = Answer.new

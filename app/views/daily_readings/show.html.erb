@@ -90,11 +90,12 @@
 <button class="open-button" type="button">Chat</button>
 
 <div class="chat-popup form-container" id="myForm">
-  <%= simple_form_for(@daily_reading) do |f| %>
+  <%= render "shared/chatroom", locals: { chatroom:@chatroom } %>
+  <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
     <h1>Chat</h1>
 
-    <%= f.label :questions, "Message" %>
-    <%= f.text_area :questions %>
+    <%# <%= f.label %>
+    <%= f.input :content, label: false, placeholder: "Message #{@chatroom.name}" %>
 
     <button type="submit" class="btn-chat">Send</button>
     <button type="button" id="btn-cancel">Close</button>
