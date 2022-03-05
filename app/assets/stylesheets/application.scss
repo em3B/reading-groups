@@ -231,6 +231,11 @@ a {
     cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
   }
 }
+.subscription-btn a, h3, h4, a:hover, h3:hover, h4:hover {
+  color: $dark_orange;
+  font-weight: bold;
+  text-decoration: none;
+}
 
 .subscription-img img {
   width: 150px;
