@@ -2,12 +2,18 @@ class ReadingGroupsController < ApplicationController
   before_action :find_reading_group, only: %i[show]
 
   def index
-    @reading_groups = []
-    ReadingGroup.all.each do |rg|
-      if rg.users.include?(current_user)
-        @reading_groups << rg
+    if current_user.teacher
+      @reading_groups = []
+      ReadingGroup.all.each do |rg|
+        if rg.users.include?(current_user)
+          @reading_groups << rg
+        end
       end
+    else
+      redirect_to daily_readings_path
     end
+
+
   end
 
   def show

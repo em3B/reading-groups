@@ -16,7 +16,7 @@ class AnswersController < ApplicationController
     @answer.user = current_user
     if @answer.save
       flash[:notice] = "Answer saved!"
-      redirect_to reading_group_path(params[:answer][:reading_group_id].to_i)
+      redirect_to daily_reading_path(params[:answer][:daily_reading_id].to_i)
     else
       render :new
     end
