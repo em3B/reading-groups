@@ -11,8 +11,6 @@ class AnswersController < ApplicationController
 
   def create
     @answer = Answer.new(answer_params)
-    # @question = Question.find(params[:question_id])
-    # @answer.question = @question
     @answer.user = current_user
     if @answer.save
       flash[:notice] = "Answer saved!"
@@ -24,12 +22,8 @@ class AnswersController < ApplicationController
 
   def update
     @answer = Answer.find(params[:id])
-    @question = Question.find(params[:question_id])
-    @answer.question = @question
-    @answer.user = current_user
     @answer.update(answer_params)
-
-    redirect_to student_reading_group_daily_reading_path
+    redirect_to daily_reading_path(params[:answer][:daily_reading_id])
   end
 
   private
@@ -39,7 +33,7 @@ class AnswersController < ApplicationController
   end
 
   def answer_params
-    params.require(:answer).permit(:question_id, :content)
+    params.require(:answer).permit(:content, :question_id)
   end
 
 end
