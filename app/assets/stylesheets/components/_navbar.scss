@@ -1,7 +1,18 @@
+
+// colours
+$dyslexia_background: #FFFBF7;
+$lightest_blue: #E6F0F3;
+$light_blue: #C8E4EE;
+$light_orange: #F38A63;
+$coral: #F16B3A;
+$medium_orange: #DB6328;
+$dark_orange: #B13A1A;
+
+
 .navbar-lewagon {
   justify-content: space-between;
   overflow: hidden;
-  background: white;
+  background: $lightest_blue;
   position: fixed;
   width: 100%;
   top: 0px;
@@ -10,7 +21,7 @@
 .navbar-lewagon .navbar-collapse {
   // flex-grow: 0;
   float: right;
-  margin-top: 18px;
+  margin-top: 8px;
 }
 
 .navbar-lewagon .navbar-brand img {
