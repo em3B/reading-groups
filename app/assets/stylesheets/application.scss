@@ -172,12 +172,14 @@ a {
   min-width: 1024px;
   width: 100%;
   height: 100%;
+  background-image: url("https://res.cloudinary.com/dm37aktki/image/upload/v1646478779/reading_offooz-e_brightness_-49_gsd8b9.png");
   background-attachment: fixed;
   top: 0;
   left: 0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
   // margin-bottom: -100px;
 }
 
@@ -204,9 +206,6 @@ a {
 .head {
   display: flex;
   flex: 2;
-}
-.head-text {
-
 }
 
 // subcription button row of home
