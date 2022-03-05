@@ -13,9 +13,11 @@ Rails.application.routes.draw do
   resources :reading_groups
 
   resources :answers
+
+  resources :chatrooms, only: :show
+
 end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
 
 # 10.times do
 #   User.create!(
