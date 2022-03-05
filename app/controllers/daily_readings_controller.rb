@@ -10,6 +10,8 @@ class DailyReadingsController < ApplicationController
 
   def show
     @answer = Answer.new
+    @chatroom = Chatroom.find(params[:id])
+    @message = Message.new
   end
 
   private
