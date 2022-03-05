@@ -109,7 +109,7 @@ puts "Creating daily reading..."
 DailyReading.create!(
   text: Text.first,
   reading_group: ReadingGroup.first,
-  session_date: "2022-03-02",
+  session_date: Date.today,
   excerpt: "
     — CHAPTER ONE —
 

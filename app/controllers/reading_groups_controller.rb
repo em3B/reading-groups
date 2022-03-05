@@ -10,7 +10,8 @@ class ReadingGroupsController < ApplicationController
         end
       end
     else
-      redirect_to daily_readings_path
+      @daily_reading = DailyReading.where(session_date: Date.today)
+      redirect_to daily_reading_path(@daily_reading.first.id)
     end
 
 
