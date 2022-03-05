@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   resources :reading_groups
 
+  resources :daily_readings
+
   resources :answers
 end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
