@@ -10,8 +10,12 @@ class DailyReadingsController < ApplicationController
 
   def show
     @answer = Answer.new
-    @chatroom = Chatroom.find(params[:id])
+    # @chatroom = Chatroom.find(params[:id])
+    @chatroom = Chatroom.new(name: "bundo group")
+    @chatroom.save!
     @message = Message.new
+
+
     # @questions = @daily_reading.questions
     # @answer = Answer.where(daily_reading_id: params[:id], user: current_user) || Answer.new
     # @answer = Answer.new
