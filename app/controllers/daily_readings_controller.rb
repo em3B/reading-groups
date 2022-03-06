@@ -12,6 +12,15 @@ class DailyReadingsController < ApplicationController
     @answer = Answer.new
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
+    # @questions = @daily_reading.questions
+    # @answer = Answer.where(daily_reading_id: params[:id], user: current_user) || Answer.new
+    # @answer = Answer.new
+    @questions_with_answers = @daily_reading.questions.map do |question|
+      {
+        question: question,
+        answer: question.user_answer(current_user) || Answer.new
+      }
+    end
   end
 
   private
