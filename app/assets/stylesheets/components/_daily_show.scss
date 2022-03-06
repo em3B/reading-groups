@@ -8,12 +8,14 @@ $dark_orange: #B13A1A;
 
 .daily-sidebar {
   display: table-cell;
+  padding: 50px;
+  background-color: $coral;
 }
 
 .daily-text {
   display: table-cell;
   background-color: $dyslexia_background;
-  // width: 100%;
+  width: 60%;
   line-height: 2.4;
   padding: 120px;
   font-size: 16px;
