@@ -1,79 +1,78 @@
-<div class="wrapper">
-  <%= cl_video_tag("https://res.cloudinary.com/dm37aktki/video/upload/v1646585145/pexels-marta-wave-6436524_kxqi9w.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video") %>
-  <br>
-  <div class="text-center font-weight-bold text-white line-height-xl pt-5 c-2-a">
-      <h1><em>Online Guided Reading Today</em></h1><br><br>
-      <h1 class="m-3">Why?</h1>
-      <br><br>
-      <h1>🖍 Pain-free assessment</h1>
-      <h1>📚 No extra books needed</h1>
-      <h1>🙋🏽‍♀️ Communicate easily</h1>
-  </div>
-  <br>
-  <br>
-  <%# subscription options %>
-    <div class="subscription-btn-group pt-5">
-      <%= link_to "#" do %>
-        <button class="subscription-btn">
-          <div class="subscription-img">
-            <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645639935/Vector_illustration_of_High_school_building._Vector_School_Building_jcowx0.jpg") %>
-          </div>
-          <h4 class="fancy-link"><%= link_to "School Subscription", "#"  %></h4>
-        </button>
-      <% end %>
 
-      <%= link_to "#" do  %>
-        <button class="subscription-btn">
-          <div class="subscription-img">
-            <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645639907/Depositphotos_264171728_S_yf3twi.jpg") %>
-          </div>
-          <h4 class="fancy-link"><%= link_to "Family Subscription", "#" %></h4>
-        </button>
-      <% end %>
-
-      <%= link_to reading_groups_path do  %>
-        <button class="subscription-btn">
-          <div class="subscription-img">
-            <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645639917/Depositphotos_57293061_S_mnbcls.jpg") %>
-          </div>
-          <h4 class="fancy-link"><%= link_to "Free Demo", reading_groups_path %></h4>
-        </button>
-      <% end %>
-
-    </div>
-
-    </div>
-
-    <%# signup %>
-    <%# <div class="guided-reading-intro mr-5">
-      <h3>Why guided reading online?</h3>
-      <br>
-      <p>🖍 Easy assessment with no unneeded paper fuss!</p>
-      <br>
-      <p>📚 No more buying hundreds of books for your class readings.</p>
-      <br>
-      <p>🙋🏽‍♀️ Easily learn to communicate about reading together.</p>
-      <%= link_to '<button class="btn-home ml-5">Signup Now!</button>'.html_safe, new_user_registration_path %>
-    <%# </div> %>
-
-
-    <%# book cover samples %>
-
-
-    <%# <h1 class="home-text ml-3">Library</h1>
-    <div class="cover-images">
-      <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645566231/development/65w3tdfn58fv1yc7piadykpykx21.jpg") %>
-      <%# <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645626730/tim-alex-xG5VJW-7Bio-unsplash_xtdpe3.jpg") %>
-      <%# <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645876862/1416949755_gcvtaq.jpg") %>
-      <%# <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645876912/612YBuAc8WL._SY346__y37ysq.jpg") %>
-      <%# <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645876944/9780312380038-uk_wxmthr.jpg") %>
-      <%# <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645876971/9780007395200-uk_kam2wc.jpg") %>
-      <%# <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645877078/0689818769_zprg2n.jpg") %>
-      <%# <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645877215/51R0mefiFDL._SY291_BO1_204_203_200_QL40_ML2__lpfwup.jpg") %>
-      <%# <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645877291/71fByMp-W2L_wumzpe.jpg") %>
-      <%# <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645877401/91mitTJPkKL_oapi0c.jpg") %>
-    <%# </div>
-
-  </div> %>
-  <div class="push"></div>
+<%= cl_video_tag("https://res.cloudinary.com/dm37aktki/video/upload/v1646585145/pexels-marta-wave-6436524_kxqi9w.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video") %>
+<br>
+<div class="text-center font-weight-bold ine-height-xl pt-5 c-2-a">
+    <h1><em>Online Guided Reading Today</em></h1><br><br>
+    <h1 class="m-3">Why?</h1>
+    <br><br>
+    <h1>🖍 Pain-free assessment</h1>
+    <h1>📚 No extra books needed</h1>
+    <h1>🙋🏽‍♀️ Communicate easily</h1>
 </div>
+<br>
+<br>
+<%# subscription options %>
+  <div class="subscription-btn-group pt-5">
+    <%= link_to "#" do %>
+      <button class="subscription-btn">
+        <div class="subscription-img">
+          <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645639935/Vector_illustration_of_High_school_building._Vector_School_Building_jcowx0.jpg") %>
+        </div>
+        <h4 class="fancy-link"><%= link_to "School Subscription", "#"  %></h4>
+      </button>
+    <% end %>
+
+    <%= link_to "#" do  %>
+      <button class="subscription-btn">
+        <div class="subscription-img">
+          <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645639907/Depositphotos_264171728_S_yf3twi.jpg") %>
+        </div>
+        <h4 class="fancy-link"><%= link_to "Family Subscription", "#" %></h4>
+      </button>
+    <% end %>
+
+    <%= link_to reading_groups_path do  %>
+      <button class="subscription-btn">
+        <div class="subscription-img">
+          <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645639917/Depositphotos_57293061_S_mnbcls.jpg") %>
+        </div>
+        <h4 class="fancy-link"><%= link_to "Free Demo", reading_groups_path %></h4>
+      </button>
+    <% end %>
+
+  </div>
+
+  </div>
+
+  <%# signup %>
+  <%# <div class="guided-reading-intro mr-5">
+    <h3>Why guided reading online?</h3>
+    <br>
+    <p>🖍 Easy assessment with no unneeded paper fuss!</p>
+    <br>
+    <p>📚 No more buying hundreds of books for your class readings.</p>
+    <br>
+    <p>🙋🏽‍♀️ Easily learn to communicate about reading together.</p>
+    <%= link_to '<button class="btn-home ml-5">Signup Now!</button>'.html_safe, new_user_registration_path %>
+  <%# </div> %>
+
+
+  <%# book cover samples %>
+
+
+  <%# <h1 class="home-text ml-3">Library</h1>
+  <div class="cover-images">
+    <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645566231/development/65w3tdfn58fv1yc7piadykpykx21.jpg") %>
+    <%# <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645626730/tim-alex-xG5VJW-7Bio-unsplash_xtdpe3.jpg") %>
+    <%# <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645876862/1416949755_gcvtaq.jpg") %>
+    <%# <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645876912/612YBuAc8WL._SY346__y37ysq.jpg") %>
+    <%# <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645876944/9780312380038-uk_wxmthr.jpg") %>
+    <%# <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645876971/9780007395200-uk_kam2wc.jpg") %>
+    <%# <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645877078/0689818769_zprg2n.jpg") %>
+    <%# <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645877215/51R0mefiFDL._SY291_BO1_204_203_200_QL40_ML2__lpfwup.jpg") %>
+    <%# <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645877291/71fByMp-W2L_wumzpe.jpg") %>
+    <%# <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645877401/91mitTJPkKL_oapi0c.jpg") %>
+  <%# </div>
+
+</div> %>
+<div class="push"></div>
