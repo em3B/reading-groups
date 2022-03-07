@@ -1,0 +1,58 @@
+<div class="wrapper">
+  <div class="push"></div>
+
+  <h1 class="text-center font-weight-bold text-white pt-5"><%= current_user.name  %></h1>
+  <h3 class="text-center font-weight-bold text-white pt-5">Choose a Date to Find Your Answers!</h3>
+
+<%# Modal with answer popups %>
+  <div class="subscription-btn-group">
+    <% DailyReading.all.each do |dr|  %>
+      <% @questions_with_answers.each_with_index do |q_w_a, i|%>
+      <% @answers.each do |answer| %>
+      <button type="button" class="subscription-btn" data-toggle="modal" data-target="#questionModal-<%=i%>">
+          <div class="subscription-img">
+            <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1646655636/Depositphotos_10479229_S_dhwxrs.jpg") %>
+          </div>
+            <h3><%= dr.session_date.strftime("%d %B")  %></h3>
+          </button>
+
+          <div class="modal fade" id="questionModal-<%=i%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel"><%= q_w_a[:question].content %></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="mb-3">
+                    <% if q_w_a[:answer].content.present? %>
+                      <%= simple_form_for(q_w_a[:answer]) do |f| %>
+                        <%= f.hidden_field :question_id, value: q_w_a[:question].id %>
+                        <%= f.hidden_field :daily_reading_id, value: dr.id %>
+                        <%= f.label :content, class: "col-form-label" %>
+                        <%= f.label :content, class: "form-control", id: "student-answer" %>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <% end %>
+      <% end %>
+    <% end %>
+
+
+
+
+
+  </div>
+
+  <div class="push"></div>
+</div>

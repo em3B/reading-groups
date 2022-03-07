@@ -1,6 +1,20 @@
 class AnswersController < ApplicationController
   before_action :find_answer, only: %i[show update]
 
+  def index
+    @answers = Answer.all.where(user: current_user)
+    @answers.each do |a|
+      @questions = a.question
+      @daily_reading = @questions.daily_reading
+    end
+    @questions_with_answers = @daily_reading.questions.map do |question|
+      {
+        question: question,
+        answer: question.user_answer(current_user) || Answer.new
+      }
+    end
+  end
+
   def show
   end
 
