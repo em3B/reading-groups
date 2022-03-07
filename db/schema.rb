@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_05_120630) do
+ActiveRecord::Schema.define(version: 2022_03_07_171759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2022_03_05_120630) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "excerpt"
     t.date "session_date"
+    t.string "cover"
     t.index ["reading_group_id"], name: "index_daily_readings_on_reading_group_id"
     t.index ["text_id"], name: "index_daily_readings_on_text_id"
   end

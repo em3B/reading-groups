@@ -1,4 +1,9 @@
 <div class="wrapper">
+  <% if @daily_reading.cover.present? %>
+    <div class="cover-image">
+      <%= cl_image_tag(@daily_reading.cover)  %>
+    </div>
+  <% end %>
 <div class="push"></div>
 <%# text and question together %>
 <div class="content">
