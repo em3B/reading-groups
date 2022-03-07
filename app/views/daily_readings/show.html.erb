@@ -7,7 +7,7 @@
   <%= content_tag :p, flash[:notice], :class => "flash notice" if flash[:notice] %>
   <div class="daily-text">
     <h1 class="text-center m-5">Today is:<br><%= Date.today.strftime("%d %B")  %></h1>
-    <p class="text-justify"><%= @daily_reading.excerpt %></p>
+    <p class="text-justify no-highlight"><%= @daily_reading.excerpt %></p>
   </div>
   <%# question column %>
   <div class="daily-questions">
