@@ -3,6 +3,9 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+//= require jquery.turbolinks
+
+
 import Rails from "@rails/ujs";
 import Turbolinks from "turbolinks";
 import * as ActiveStorage from "@rails/activestorage";
@@ -27,6 +30,7 @@ import "bootstrap";
 
 import {openForm, closeForm} from '../components/chat';
 import {initChatroomCable} from '../channels/chatroom_channel';
+import {coverFade} from '../components/book';
 import {highlight} from '../components/highlight';
 
 document.addEventListener('turbolinks:load', () => {
@@ -40,6 +44,7 @@ document.addEventListener('turbolinks:load', () => {
     closeForm();
   }
 
+  coverFade();
   initChatroomCable();
   highlight();
 });

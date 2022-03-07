@@ -110,6 +110,7 @@ DailyReading.create!(
   text: Text.first,
   reading_group: ReadingGroup.first,
   session_date: Date.today,
+  cover: "https://res.cloudinary.com/dm37aktki/image/upload/v1646673693/3._SY475__to4onf.jpg",
   excerpt: "
     — CHAPTER ONE —
 
@@ -593,6 +594,7 @@ DailyReading.create!(
   text: Text.first,
   reading_group: ReadingGroup.first,
   session_date: "2022-03-03",
+  cover: "https://res.cloudinary.com/dm37aktki/image/upload/v1646673693/3._SY475__to4onf.jpg",
   excerpt: "
     — CHAPTER TWO —
 
@@ -966,6 +968,7 @@ DailyReading.create!(
   text: Text.first,
   reading_group: ReadingGroup.first,
   session_date: "2022-03-04",
+  cover: "https://res.cloudinary.com/dm37aktki/image/upload/v1646673693/3._SY475__to4onf.jpg",
   excerpt: "
     — CHAPTER THREE —
 
