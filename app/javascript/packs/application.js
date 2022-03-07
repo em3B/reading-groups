@@ -31,6 +31,7 @@ import "bootstrap";
 import {openForm, closeForm} from '../components/chat';
 import {initChatroomCable} from '../channels/chatroom_channel';
 import {coverFade} from '../components/book';
+import {highlight} from '../components/highlight';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -45,4 +46,5 @@ document.addEventListener('turbolinks:load', () => {
 
   coverFade();
   initChatroomCable();
+  highlight();
 });
