@@ -21,6 +21,14 @@ $dark_orange: #B13A1A;
   font-size: 16px;
 }
 
+.highlighted-text {
+  background-color: #ffdf65 ;
+}
+
+.no-highlight {
+  background-color: $dyslexia_background;
+}
+
 .daily-questions {
   display: table-cell;
   align-items: center;
