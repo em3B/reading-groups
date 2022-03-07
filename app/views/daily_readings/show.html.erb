@@ -2,6 +2,7 @@
 <div class="push"></div>
 <%# text and question together %>
 <div class="content">
+  <div class="daily-sidebar"></div>
   <%# text column %>
   <%= content_tag :p, flash[:notice], :class => "flash notice" if flash[:notice] %>
   <div class="daily-text">
@@ -92,10 +93,9 @@
 <div class="chat-popup form-container" id="myForm">
   <%= render "shared/chatroom", locals: { chatroom:@chatroom } %>
   <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-    <h1>Chat</h1>
 
     <%# <%= f.label %>
-    <%= f.input :content, label: false, placeholder: "Message #{@chatroom.name}" %>
+    <%= f.text_area :content, size: "5x5", label: false, placeholder: "Message #{@chatroom.name}" %>
 
     <button type="submit" class="btn-chat">Send</button>
     <button type="button" id="btn-cancel">Close</button>
