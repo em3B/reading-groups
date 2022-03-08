@@ -7,7 +7,7 @@
 <div class="push"></div>
 <%# text and question together %>
 <div class="content">
-  <div class="daily-sidebar"></div>
+  <%# <div class="daily-sidebar"></div> %>
   <%# text column %>
   <%= content_tag :p, flash[:notice], :class => "flash notice" if flash[:notice] %>
   <div class="daily-text">
@@ -16,7 +16,7 @@
   </div>
   <%# question column %>
   <div class="daily-questions">
-    <h1 class="text-center font-weight-bold text-white pt-5">Answer your questions below:</h1>
+    <h3 class="text-center font-weight-bold text-white pt-5">Answer Questions:</h3>
     <% @questions_with_answers.each_with_index do |q_w_a, i|%>
 
     <%# for non extension questions %>
