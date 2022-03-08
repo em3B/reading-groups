@@ -1,23 +1,17 @@
 <div class="wrapper">
   <div class="push"></div>
-  <%# navbar extension: objective %>
-  <% if @daily_reading.objective.present? %>
-    <div class="objective-bar">
-      <div class="objective-title">
-        <h3>Objective (Click Me!)</h3>
-      </div>
-      <div class="objective-content">
-        <%= @daily_reading.objective  %>
-      </div>
-    </div>
-  <% end %>
+
   <%# text and question together %>
   <div class="content">
     <%# <div class="daily-sidebar"></div> %>
     <%# text column %>
     <%= content_tag :p, flash[:notice], :class => "flash notice" if flash[:notice] %>
     <div class="daily-text">
-      <h1 class="text-center m-5">Today is:<br><%= Date.today.strftime("%d %B")  %></h1>
+      <h1 class="text-center m-5">Today is:<br><%= Date.today.strftime("%d %B")  %></h1><br>
+      <% if @daily_reading.objective.present? %>
+        <h3>Objective:</h3>
+        <h3><%=  @daily_reading.objective %></h3>
+      <% end %>
       <p class="text-justify no-highlight"><%= @daily_reading.excerpt %></p>
     </div>
     <%# question column %>
