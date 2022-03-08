@@ -15,15 +15,30 @@ $dark_orange: #B13A1A;
 .daily-text {
   display: table-cell;
   background-color: $dyslexia_background;
-  width: 60%;
+  table-layout: auto;
+  height: 100%;
+  width: 70%;
+  left: 0;
   line-height: 2.4;
-  padding: 120px;
+  padding: 80px;
+  white-space: pre-wrap;
   font-size: 16px;
+  text-align: justify;
+  word-break: break-all;
+  -moz-text-align-last: left;
+  text-align-last: left;
 }
 
 .daily-questions {
   display: table-cell;
-  align-items: center;
+  align-items: left;
+  border-spacing: 0px;
+  table-layout: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  // width: 310px;
+  max-width: 100px;
+  overflow-wrap: break-word;
 }
 
 .question-buttons {
@@ -33,8 +48,9 @@ $dark_orange: #B13A1A;
 }
 
 .content {
-  height: 100%;
+  max-width: 100%;
   overflow: scroll;
+  table-layout: auto;
 }
 /* width */
 ::-webkit-scrollbar {
