@@ -1,75 +1,74 @@
 <div class="wrapper">
-  <% if @daily_reading.cover.present? %>
-    <div class="cover-image">
-      <%= cl_image_tag(@daily_reading.cover)  %>
-    </div>
-  <% end %>
-<div class="push"></div>
-<%# navbar extension: objective %>
+  <div class="push"></div>
+  <%# navbar extension: objective %>
   <% if @daily_reading.objective.present? %>
     <div class="objective-bar">
-      <h3>Objective</h3>
-      <%= @daily_reading.objective  %>
+      <div class="objective-title">
+        <h3>Objective (Click Me!)</h3>
+      </div>
+      <div class="objective-content">
+        <%= @daily_reading.objective  %>
+      </div>
     </div>
   <% end %>
-<%# text and question together %>
-<div class="content">
-  <%# <div class="daily-sidebar"></div> %>
-  <%# text column %>
-  <%= content_tag :p, flash[:notice], :class => "flash notice" if flash[:notice] %>
-  <div class="daily-text">
-    <h1 class="text-center m-5">Today is:<br><%= Date.today.strftime("%d %B")  %></h1>
-    <p class="text-justify no-highlight"><%= @daily_reading.excerpt %></p>
-  </div>
-  <%# question column %>
-  <div class="daily-questions">
-    <h3 class="text-center font-weight-bold text-white pt-5">Answer Questions:</h3>
-    <% @questions_with_answers.each_with_index do |q_w_a, i|%>
+  <%# text and question together %>
+  <div class="content">
+    <%# <div class="daily-sidebar"></div> %>
+    <%# text column %>
+    <%= content_tag :p, flash[:notice], :class => "flash notice" if flash[:notice] %>
+    <div class="daily-text">
+      <h1 class="text-center m-5">Today is:<br><%= Date.today.strftime("%d %B")  %></h1>
+      <p class="text-justify no-highlight"><%= @daily_reading.excerpt %></p>
+    </div>
+    <%# question column %>
+    <div class="daily-questions">
+      <h3 class="text-center font-weight-bold text-white pt-5">Answer Questions:</h3>
+      <% @questions_with_answers.each_with_index do |q_w_a, i|%>
 
-    <%# for non extension questions %>
-          <!-- Button trigger modal -->
-      <% if q_w_a[:question].extension == false %>
-        <div class="question-buttons">
-          <button type="button" class="modal-questions-btn" data-toggle="modal" data-target="#questionModal-<%=i%>">
-            Question
-          </button>
-        </div>
-                <!-- Modal -->
-        <div class="modal fade" id="questionModal-<%=i%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"><%= q_w_a[:question].content %></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-                <div class="modal-body">
-                  <div class="mb-3">
-                    <%= simple_form_for(q_w_a[:answer]) do |f| %>
-                      <%= f.hidden_field :question_id, value: q_w_a[:question].id %>
-                      <%= f.hidden_field :daily_reading_id, value: @daily_reading.id %>
-                      <%= f.label :content, class: "col-form-label" %>
-                      <%= f.text_field :content, class: "form-control", id: "student-answer", placeholder: "Type your answer here" %>
-                      <%= f.submit class: "modal-questions-btn m-3"%>
-                    <% end %>
-                  </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <%# for non extension questions %>
+            <!-- Button trigger modal -->
+        <% if q_w_a[:question].extension == false %>
+          <div class="question-buttons">
+            <button type="button" class="modal-questions-btn" data-toggle="modal" data-target="#questionModal-<%=i%>">
+              Question
+            </button>
+          </div>
+                  <!-- Modal -->
+          <div class="modal fade" id="questionModal-<%=i%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel"><%= q_w_a[:question].content %></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                  <div class="modal-body">
+                    <div class="mb-3">
+                      <%= simple_form_for(q_w_a[:answer]) do |f| %>
+                        <%= f.hidden_field :question_id, value: q_w_a[:question].id %>
+                        <%= f.hidden_field :daily_reading_id, value: @daily_reading.id %>
+                        <%= f.label :content, class: "col-form-label" %>
+                        <%= f.text_field :content, class: "form-control", id: "student-answer", placeholder: "Type your answer here" %>
+                        <%= f.submit class: "modal-questions-btn m-3"%>
+                      <% end %>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      <%# for extension questions %>
-      <% else %>
-        <button type="button" class="subscription-btn" data-toggle="modal" data-target="#exampleModal">
-          <div class="subscription-img">
-            <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1646144180/Depositphotos_50322049_S_yjdtuf.jpg") %>
-          </div>
-          Extension Question
-        </button>
+        <%# for extension questions %>
+        <% else %>
+          <button type="button" class="subscription-btn" data-toggle="modal" data-target="#exampleModal">
+            <div class="subscription-img">
+              <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1646144180/Depositphotos_50322049_S_yjdtuf.jpg") %>
+            </div>
+            Extension Question
+          </button>
 
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -84,34 +83,33 @@
                 <form>
                   <div class="mb-3">
                     <label for="recipient-name" class="col-form-label">My Answer:</label>
-                    <input type="text" class="form-control" id="student-answer">
+                    <textarea rows="16" cols="180" class="form-control" id="student-answer"></textarea>
                   </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="modal-questions-btn">Save changes</button>
+                <input type="button" class="modal-questions-btn" value="Save Changes">
               </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
+    </div>
+    <%# extension question %>
+  </div>
+  <%# chat box %>
+  <button class="open-button" type="button">Chat</button>
+
+  <div class="chat-popup form-container" id="myForm">
+    <%= render "shared/chatroom", locals: { chatroom:@chatroom } %>
+    <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+
+      <%# <%= f.label %>
+      <%= f.text_area :content, size: "5x5", label: false, placeholder: "Message #{@chatroom.name}" %>
+
+      <button type="submit" class="btn-chat">Send</button>
+      <button type="button" id="btn-cancel">Close</button>
     <% end %>
   </div>
-  <%# extension question %>
-</div>
-<%# chat box %>
-<button class="open-button" type="button">Chat</button>
-
-<div class="chat-popup form-container" id="myForm">
-  <%= render "shared/chatroom", locals: { chatroom:@chatroom } %>
-  <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-
-    <%# <%= f.label %>
-    <%= f.text_area :content, size: "5x5", label: false, placeholder: "Message #{@chatroom.name}" %>
-
-    <button type="submit" class="btn-chat">Send</button>
-    <button type="button" id="btn-cancel">Close</button>
-  <% end %>
-</div>
-<div class="push"></div>
+  <div class="push"></div>
 </div>

@@ -126,7 +126,7 @@ a {
 
 // footer
 .footer {
-  background-color: $light_blue;
+  background-color: $lightest_blue;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -223,7 +223,7 @@ a {
 .subscription-btn-group {
   display: flex;
   flex: 1;
-  justify-content: space-evenly;
+  justify-content: center;
   padding-bottom: 200px;
 }
 

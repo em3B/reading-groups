@@ -30,14 +30,6 @@ $dark_orange: #B13A1A;
   z-index: 0;
 }
 
-.cover-image img {
-  z-index: 1;
-  width: 60%;
-  align-items: center;
-  position: absolute;
-  left: 15%;
-}
-
 .highlighted-text {
   background-color: #ffdf65 ;
 }
@@ -57,7 +49,6 @@ $dark_orange: #B13A1A;
   max-width: 100px;
   overflow-wrap: break-word;
 }
-
 .question-buttons {
   margin: 48px;
   display: flex;
@@ -89,4 +80,22 @@ $dark_orange: #B13A1A;
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: $medium_orange;
+}
+
+// objective
+.objective-bar {
+  background-color: $light_blue;
+  color: $dark_orange;
+  height: 60px;
+}
+.objective-title {
+  margin-left: 40px;
+  display: inline-block;
+  border: 3px $dark_orange;
+  padding-top: 10px;
+}
+.objective-content {
+  margin-left: 20px;
+  display: inline-block;
+  padding-top: 10px;
 }
