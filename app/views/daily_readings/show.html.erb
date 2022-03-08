@@ -1,12 +1,16 @@
 <div class="wrapper">
   <div class="push"></div>
   <%# navbar extension: objective %>
-    <% if @daily_reading.objective.present? %>
-      <div class="objective-bar">
-        <h3>Objective</h3>
+  <% if @daily_reading.objective.present? %>
+    <div class="objective-bar">
+      <div class="objective-title">
+        <h3>Objective (Click Me!)</h3>
+      </div>
+      <div class="objective-content">
         <%= @daily_reading.objective  %>
       </div>
-    <% end %>
+    </div>
+  <% end %>
   <%# text and question together %>
   <div class="content">
     <%# <div class="daily-sidebar"></div> %>
