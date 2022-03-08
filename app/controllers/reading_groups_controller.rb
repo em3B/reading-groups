@@ -35,3 +35,4 @@ end
     # @daily_reading = DailyReading.find(params[:daily_reading_id])
     # @reading_group.daily_reading = @daily_reading
     # @reading_group.user = current_user
+    #
