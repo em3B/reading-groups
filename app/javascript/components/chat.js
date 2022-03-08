@@ -1,5 +1,3 @@
-// const element = document.querySelector(".open-button");
-// const cancel = document.querySelector("#btn-cancel");
 
 function openForm() {
   const element = document.querySelector(".open-button");
