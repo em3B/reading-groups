@@ -5,6 +5,13 @@
     </div>
   <% end %>
 <div class="push"></div>
+<%# navbar extension: objective %>
+  <% if @daily_reading.objective.present? %>
+    <div class="objective-bar">
+      <h3>Objective</h3>
+      <%= @daily_reading.objective  %>
+    </div>
+  <% end %>
 <%# text and question together %>
 <div class="content">
   <%# <div class="daily-sidebar"></div> %>

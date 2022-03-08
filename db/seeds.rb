@@ -109,6 +109,7 @@ DailyReading.create!(
   text: Text.first,
   reading_group: ReadingGroup.first,
   session_date: Date.today,
+  objective: "I can identify personification and apply it to my writing",
   cover: "https://res.cloudinary.com/dm37aktki/image/upload/v1646673693/3._SY475__to4onf.jpg",
   excerpt: "
     — CHAPTER ONE —
@@ -129,6 +130,7 @@ DailyReading.create!(
   text: Text.first,
   reading_group: ReadingGroup.first,
   session_date: "2022-03-03",
+  objective: "I can make predictions about a story",
   cover: "https://res.cloudinary.com/dm37aktki/image/upload/v1646673693/3._SY475__to4onf.jpg",
   excerpt: "
     He’d forgotten all about the people in cloaks until he passed a group of them next to the baker’s. He eyed them angrily as he passed. He didn’t know why, but they made him uneasy. This lot were whispering excitedly, too, and he couldn’t see a single collecting tin. It was on his way back past them, clutching a large doughnut in a bag, that he caught a few words of what they were saying.
@@ -153,6 +155,7 @@ Mr Dursley sat frozen in his armchair. Shooting stars all over Britain? Owls fly
 DailyReading.create!(
   text: Text.first,
   reading_group: ReadingGroup.first,
+  objective: "I can make predictions about a story",
   session_date: "2022-03-04",
   cover: "https://res.cloudinary.com/dm37aktki/image/upload/v1646673693/3._SY475__to4onf.jpg",
   excerpt: "
@@ -195,27 +198,72 @@ puts "Done!"
 
 puts "Creating questions..."
 
+FIRST_QUESTIONS = [
+  "Which object or animal in the text is personified?",
+  "Highlight verbs that describe what the cat does. Write the verbs below.",
+  "Pick one of the verbs from the previous question. Write a more descriptive verb to replace it.",
+  "There is also an owl in the text. Write your 2-3 sentences describing what the owl does next in which you personify it."
+]
+
 QUESTION_CONTENTS = [
-  "What do you think of the main character's behaviour in this scene?",
-  "What did you enjoy about this chapter?",
-  "Were there any words you didn't understand?"
+  "Complete the following sentence about the end of the text: I think _______________ will happen next because ________________.",
+  "Give one piece of evidence to support your prediction above.",
+  "Why do you think it is important to make predictions."
 ]
 
 counter = 0
+
+3.times do Question.create!(
+  daily_reading_id: DailyReading.first.id,
+  content: FIRST_QUESTIONS[counter],
+  active: true,
+  extension: false
+)
+  counter += 1
+end
+
+Question.create!(
+  content: "There is also an owl in the text. Write your 2-3 sentences describing what the owl does next in which you personify it.",
+  active: true,
+  daily_reading_id: DailyReading.first.id,
+  extension: true
+)
+
+counter = 0
+
 3.times do
   Question.create!(
-    daily_reading: DailyReading.first,
     content: QUESTION_CONTENTS[counter],
     active: true,
+    daily_reading_id: DailyReading.second.id,
     extension: false
   )
   counter += 1
 end
 
 Question.create!(
-  daily_reading: DailyReading.first,
-  content: "Rewrite the chapter from the perspective of Mr. Dursley.",
+  content: "Use your prediction above to write your own sequel about what comes next.",
   active: true,
+  daily_reading_id: DailyReading.second.id,
+  extension: true
+)
+
+counter = 0
+
+3.times do
+  Question.create!(
+    content: QUESTION_CONTENTS[counter],
+    active: true,
+    daily_reading_id: DailyReading.third.id,
+    extension: false
+  )
+  counter += 1
+end
+
+Question.create!(
+  content: "Use your prediction above to write your own sequel about what comes next.",
+  active: true,
+  daily_reading_id: DailyReading.third.id,
   extension: true
 )
 
