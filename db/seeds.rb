@@ -61,7 +61,6 @@ puts "Creating text..."
 Text.create!(
   title: "Harry Potter and the Philosopher's Stone",
   author: 'J. K. Rowling',
-  cover_image: "https://res.cloudinary.com/dm37aktki/image/upload/v1645566231/development/65w3tdfn58fv1yc7piadykpykx21.jpg",
   content: "
     Chapter Eight
 The Deathday Party
