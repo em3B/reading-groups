@@ -5,7 +5,7 @@ const content = document.querySelector(".objective-content");
 function fadeObjective() {
   if (document.body.contains(content) === false) {
     title.addEventListener("click", function() {
-      jQuery(content).fadeIn(3000);
+      jQuery(content).fadeIn("fast");
     })
   }
 }
