@@ -110,6 +110,7 @@ DailyReading.create!(
   text: Text.first,
   reading_group: ReadingGroup.first,
   session_date: Date.today,
+  cover: "https://res.cloudinary.com/dm37aktki/image/upload/v1646673693/3._SY475__to4onf.jpg",
   excerpt: "
     — CHAPTER ONE —
 
@@ -129,6 +130,7 @@ DailyReading.create!(
   text: Text.first,
   reading_group: ReadingGroup.first,
   session_date: "2022-03-03",
+  cover: "https://res.cloudinary.com/dm37aktki/image/upload/v1646673693/3._SY475__to4onf.jpg",
   excerpt: "
     He’d forgotten all about the people in cloaks until he passed a group of them next to the baker’s. He eyed them angrily as he passed. He didn’t know why, but they made him uneasy. This lot were whispering excitedly, too, and he couldn’t see a single collecting tin. It was on his way back past them, clutching a large doughnut in a bag, that he caught a few words of what they were saying.
 The Potters, that’s right, that’s what I heard –’
@@ -153,6 +155,7 @@ DailyReading.create!(
   text: Text.first,
   reading_group: ReadingGroup.first,
   session_date: "2022-03-04",
+  cover: "https://res.cloudinary.com/dm37aktki/image/upload/v1646673693/3._SY475__to4onf.jpg",
   excerpt: "
    Mrs Dursley came into the living-room carrying two cups of tea. It was no good. He’d have to say something to her. He cleared his throat nervously. ‘Er – Petunia, dear – you haven’t heard from your sister lately, have you?’
 As he had expected, Mrs Dursley looked shocked and angry. After all, they normally pretended she didn’t have a sister.

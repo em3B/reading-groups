@@ -27,6 +27,23 @@ $dark_orange: #B13A1A;
   word-break: break-all;
   -moz-text-align-last: left;
   text-align-last: left;
+  z-index: 0;
+}
+
+.cover-image img {
+  z-index: 1;
+  width: 60%;
+  align-items: center;
+  position: absolute;
+  left: 15%;
+}
+
+.highlighted-text {
+  background-color: #ffdf65 ;
+}
+
+.no-highlight {
+  background-color: $dyslexia_background;
 }
 
 .daily-questions {
