@@ -1,6 +1,7 @@
-const text = document.querySelector(".daily-text");
+// const text = document.querySelector(".daily-text");
 
 function highlight() {
+  const text = document.querySelector(".daily-text");
   if (text.classList.contains(".highlighted-text") === false) {
 
       text.addEventListener("mouseup", function() {
