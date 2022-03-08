@@ -6,7 +6,7 @@ function displayObjective() {
   if (document.body.contains(content)) {
     title.addEventListener("click", function() {
       console.log("hi");
-      jQuery(content).fadeOut(3000);
+      jQuery(content).fadeOut("fast");
     })
   }
 }
