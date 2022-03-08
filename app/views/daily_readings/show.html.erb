@@ -8,8 +8,12 @@
 <%# navbar extension: objective %>
   <% if @daily_reading.objective.present? %>
     <div class="objective-bar">
-      <h3>Objective</h3>
-      <%= @daily_reading.objective  %>
+      <div class="objective-title">
+        <h3>Objective (Click Me!)</h3>
+      </div>
+      <div class="objective-content">
+        <%= @daily_reading.objective  %>
+      </div>
     </div>
   <% end %>
 <%# text and question together %>
@@ -84,12 +88,12 @@
                 <form>
                   <div class="mb-3">
                     <label for="recipient-name" class="col-form-label">My Answer:</label>
-                    <input type="text" class="form-control" id="student-answer">
+                    <textarea rows="16" cols="180" class="form-control" id="student-answer"></textarea>
                   </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="modal-questions-btn">Save changes</button>
+                <input type="button" class="modal-questions-btn" value="Save Changes">
               </div>
             </div>
           </div>

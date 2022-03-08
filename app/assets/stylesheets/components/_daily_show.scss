@@ -90,3 +90,21 @@ $dark_orange: #B13A1A;
 ::-webkit-scrollbar-thumb:hover {
   background: $medium_orange;
 }
+
+// objective
+.objective-bar {
+  background-color: $light_blue;
+  color: $dark_orange;
+  height: 60px;
+}
+.objective-title {
+  margin-left: 40px;
+  display: inline-block;
+  border: 3px $dark_orange;
+  padding-top: 10px;
+}
+.objective-content {
+  margin-left: 20px;
+  display: inline-block;
+  padding-top: 10px;
+}
