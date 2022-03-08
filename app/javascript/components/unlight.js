@@ -1,9 +1,8 @@
 
-const text = document.querySelector(".daily-text");
-
-
 function unlight() {
+  const text = document.querySelector(".daily-text");
   if (text.classList.contains(".highlighted-text")) {
+    console.log("Hello there");
     text.addEventListener("mouseup", function() {
       let selection = document.getSelection();
       let range = selection.getRangeAt(0);

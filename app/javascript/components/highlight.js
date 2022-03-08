@@ -1,9 +1,9 @@
-const text = document.querySelector(".daily-text");
 
 function highlight() {
+  const text = document.querySelector(".daily-text");
   if (text.classList.contains(".highlighted-text") === false) {
-
       text.addEventListener("mouseup", function() {
+        console.log("Hello there");
         let selection = document.getSelection();
         let range = selection.getRangeAt(0);
         let newNode = document.createElement("span");
