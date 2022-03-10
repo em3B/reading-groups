@@ -63,13 +63,13 @@ a {
     transform: translateY(1px);
     cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
   }
-  &:focus {
-    box-shadow: inset 1px 2px 5px #777;
-    background-color: $lightest_blue;
-    color: $dark_orange;
-    transform: translateY(1px);
-    cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
-  }
+  // &:focus {
+  //   box-shadow: inset 1px 2px 5px #777;
+  //   background-color: $lightest_blue;
+  //   color: $dark_orange;
+  //   transform: translateY(1px);
+  //   cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
+  // }
 }
 
 // links
