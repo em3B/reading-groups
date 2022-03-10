@@ -1,4 +1,5 @@
 meta_product_name: "Buzz Reads"
-meta_title: "Buzz Reads - allows children to join their classes and access reading material from anywhere, all while interacting with their teachers and classmates."
-meta_description: "Guided reading app"
-meta_image: "cover.png" # should exist in `app/assets/images/`
+meta_title: "Buzz Reads - connecting teachers and students via guided reading."
+meta_description: "Guided reading app, allows children to join their classes and access reading material from anywhere, all while interacting with their teachers and classmates."
+meta_image: "ms-icon-310x310" # should exist in `app/assets/images/`
+
