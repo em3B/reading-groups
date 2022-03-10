@@ -25,7 +25,10 @@
             <!-- Button trigger modal -->
         <% if q_w_a[:question].extension == false %>
           <div class="question-buttons">
-            <button type="button" class="modal-questions-btn" data-toggle="modal" data-target="#questionModal-<%=i%>">
+            <button type="button" class="subscription-btn" data-toggle="modal" data-target="#questionModal-<%=i%>">
+              <div class="subscription-img">
+                <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1646655636/Depositphotos_10479229_S_dhwxrs.jpg") %>
+              </div>
               Question
             </button>
           </div>
@@ -59,12 +62,14 @@
           </div>
         <%# for extension questions %>
         <% else %>
-          <button type="button" class="subscription-btn" data-toggle="modal" data-target="#exampleModal">
-            <div class="subscription-img">
-              <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1646144180/Depositphotos_50322049_S_yjdtuf.jpg") %>
-            </div>
-            Extension Question
-          </button>
+          <div class="question-buttons">
+            <button type="button" class="subscription-btn" data-toggle="modal" data-target="#exampleModal">
+              <div class="subscription-img">
+                <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1646144180/Depositphotos_50322049_S_yjdtuf.jpg") %>
+              </div>
+              Extension
+            </button>
+          </div>
 
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
