@@ -1,5 +1,6 @@
 puts "Resetting database..."
 
+Message.destroy_all
 Answer.destroy_all
 Question.destroy_all
 DailyReading.destroy_all
