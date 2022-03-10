@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_08_133209) do
+ActiveRecord::Schema.define(version: 2022_03_10_203954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 2022_03_08_133209) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "daily_reading_id"
+    t.index ["daily_reading_id"], name: "index_chatrooms_on_daily_reading_id"
   end
 
   create_table "daily_readings", force: :cascade do |t|
@@ -138,6 +140,7 @@ ActiveRecord::Schema.define(version: 2022_03_08_133209) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "answers", "questions"
   add_foreign_key "answers", "users"
+  add_foreign_key "chatrooms", "daily_readings"
   add_foreign_key "daily_readings", "reading_groups"
   add_foreign_key "daily_readings", "texts"
   add_foreign_key "members", "reading_groups"
