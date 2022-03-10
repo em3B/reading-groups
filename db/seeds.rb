@@ -268,6 +268,12 @@ Question.create!(
   extension: true
 )
 
+puts "Creating Chatrooms..."
+
+Chatroom.create!(
+  daily_reading_id: DailyReading.first.id
+)
+
 puts "Done!"
 
 # puts "Creating users..."
