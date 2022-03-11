@@ -12,9 +12,9 @@ class DailyReadingsController < ApplicationController
     @answer = Answer.new
     # @chatroom = Chatroom.new
     # @chatroom.name = current_user.name
-    @chatroom = Chatroom.find_by(daily_reading_id: params[:id])
+    @chatroom = Chatroom.find_by(daily_reading_id: DailyReading.first.id)
     # @chatroom = Chatroom.new(name: "bundo group")
-    @chatroom.save!
+    # @chatroom.save!
     @message = Message.new
 
 
