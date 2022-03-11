@@ -16,24 +16,75 @@
 
       <p class="text-justify no-highlight"><%= @daily_reading.excerpt %></p>
     </div>
-    <%# question column %>
-    <div class="daily-questions">
-      <h3 class="text-center font-weight-bold text-white pt-5">Answer Questions:</h3>
-      <% @questions_with_answers.each_with_index do |q_w_a, i|%>
+    <%# question/student_list column %>
+    <% if current_user.teacher %>
+      <ul class="student-list">
+        <h3 class="text-center font-weight-bold text-white pt-5">Students:</h3>
+        <br><br>
+        <% @students.each do |student| %>
+          <% if student.online? %>
+            <li class="present"> <%= student.name %> </li><br>
+          <% else %>
+            <li> <%= student.name %> </li><br>
+          <% end %>
+        <% end %>
+      </ul>
+    <% else %>
+      <div class="daily-questions">
+        <h3 class="text-center font-weight-bold text-white pt-5">Answer Questions:</h3>
+        <% @questions_with_answers.each_with_index do |q_w_a, i|%>
 
-      <%# for non extension questions %>
-            <!-- Button trigger modal -->
-        <% if q_w_a[:question].extension == false %>
-          <div class="question-buttons">
-            <button type="button" class="subscription-btn" data-toggle="modal" data-target="#questionModal-<%=i%>">
-              <div class="subscription-img">
-                <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1646655636/Depositphotos_10479229_S_dhwxrs.jpg") %>
+        <%# for non extension questions %>
+              <!-- Button trigger modal -->
+          <% if q_w_a[:question].extension == false %>
+            <div class="question-buttons">
+              <button type="button" class="subscription-btn" data-toggle="modal" data-target="#questionModal-<%=i%>">
+                <div class="subscription-img">
+                  <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1646655636/Depositphotos_10479229_S_dhwxrs.jpg") %>
+                </div>
+                Question
+              </button>
+            </div>
+                    <!-- Modal -->
+            <div class="modal fade" id="questionModal-<%=i%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><%= q_w_a[:question].content %></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                    <div class="modal-body">
+                      <div class="mb-3">
+                        <%= simple_form_for(q_w_a[:answer]) do |f| %>
+                          <%= f.hidden_field :question_id, value: q_w_a[:question].id %>
+                          <%= f.hidden_field :daily_reading_id, value: @daily_reading.id %>
+                          <%= f.label :content, class: "col-form-label" %>
+                          <%= f.text_field :content, class: "form-control", id: "student-answer", placeholder: "Type your answer here" %>
+                          <%= f.submit class: "modal-questions-btn m-3"%>
+                        <% end %>
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                  </div>
+                </div>
               </div>
-              Question
-            </button>
-          </div>
-                  <!-- Modal -->
-          <div class="modal fade" id="questionModal-<%=i%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            </div>
+          <%# for extension questions %>
+          <% else %>
+            <div class="question-buttons">
+              <button type="button" class="subscription-btn" data-toggle="modal" data-target="#exampleModal">
+                <div class="subscription-img">
+                  <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1646144180/Depositphotos_50322049_S_yjdtuf.jpg") %>
+                </div>
+                Extension
+              </button>
+            </div>
+
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -42,62 +93,24 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                  <div class="modal-body">
+                <div class="modal-body">
+                  <form>
                     <div class="mb-3">
-                      <%= simple_form_for(q_w_a[:answer]) do |f| %>
-                        <%= f.hidden_field :question_id, value: q_w_a[:question].id %>
-                        <%= f.hidden_field :daily_reading_id, value: @daily_reading.id %>
-                        <%= f.label :content, class: "col-form-label" %>
-                        <%= f.text_field :content, class: "form-control", id: "student-answer", placeholder: "Type your answer here" %>
-                        <%= f.submit class: "modal-questions-btn m-3"%>
-                      <% end %>
+                      <label for="recipient-name" class="col-form-label">My Answer:</label>
+                      <textarea rows="16" cols="180" class="form-control" id="student-answer"></textarea>
                     </div>
+                  </form>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
+                  <input type="button" class="modal-questions-btn" value="Save Changes">
                 </div>
               </div>
             </div>
-          </div>
-        <%# for extension questions %>
-        <% else %>
-          <div class="question-buttons">
-            <button type="button" class="subscription-btn" data-toggle="modal" data-target="#exampleModal">
-              <div class="subscription-img">
-                <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1646144180/Depositphotos_50322049_S_yjdtuf.jpg") %>
-              </div>
-              Extension
-            </button>
-          </div>
-
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"><%= q_w_a[:question].content %></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form>
-                  <div class="mb-3">
-                    <label for="recipient-name" class="col-form-label">My Answer:</label>
-                    <textarea rows="16" cols="180" class="form-control" id="student-answer"></textarea>
-                  </div>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <input type="button" class="modal-questions-btn" value="Save Changes">
-              </div>
-            </div>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
-    <%# extension question %>
+      </div>
+    <% end %>
   </div>
   <%# chat box %>
   <button class="open-button" type="button">Chat</button>

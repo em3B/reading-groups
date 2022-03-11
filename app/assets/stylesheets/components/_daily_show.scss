@@ -38,6 +38,19 @@ $dark_orange: #B13A1A;
   background-color: $dyslexia_background;
 }
 
+.student-list {
+  display: table-cell;
+}
+
+.student-list li {
+  list-style: none;
+  text-align: center;
+  color: $lightest_blue;
+}
+.student-list li.present {
+  color: green
+}
+
 .daily-questions {
   display: table-cell;
   align-items: left;

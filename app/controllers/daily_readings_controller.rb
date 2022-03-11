@@ -17,7 +17,7 @@ class DailyReadingsController < ApplicationController
     # @chatroom.save!
     @message = Message.new
 
-
+    find_students
     # @questions = @daily_reading.questions
     # @answer = Answer.where(daily_reading_id: params[:id], user: current_user) || Answer.new
     # @answer = Answer.new
@@ -33,6 +33,10 @@ class DailyReadingsController < ApplicationController
 
   def find_daily_reading
     @daily_reading = DailyReading.find(params[:id])
+  end
+
+  def find_students
+    @students = @daily_reading.reading_group.users.where.not(teacher: true)
   end
 
   def daily_reading_params
