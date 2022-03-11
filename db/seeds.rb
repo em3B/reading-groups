@@ -3,9 +3,10 @@ puts "Resetting database..."
 Message.destroy_all
 Answer.destroy_all
 Question.destroy_all
+Member.destroy_all
+Chatroom.destroy_all
 DailyReading.destroy_all
 Text.destroy_all
-Member.destroy_all
 ReadingGroup.destroy_all
 User.destroy_all
 
@@ -271,7 +272,8 @@ Question.create!(
 puts "Creating Chatrooms..."
 
 Chatroom.create!(
-  daily_reading_id: DailyReading.first.id
+  daily_reading_id: DailyReading.first.id,
+  name: "Bundo"
 )
 
 puts "Done!"

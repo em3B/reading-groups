@@ -10,9 +10,10 @@ class DailyReadingsController < ApplicationController
 
   def show
     @answer = Answer.new
-    @chatroom = Chatroom.find(params[:id])
+    # @chatroom = Chatroom.new
+    # @chatroom.name = current_user.name
+    @chatroom = Chatroom.find_by(daily_reading_id: params[:id])
     # @chatroom = Chatroom.new(name: "bundo group")
-    @chatroom.daily_reading = @daily_reading
     @chatroom.save!
     @message = Message.new
 
@@ -35,6 +36,6 @@ class DailyReadingsController < ApplicationController
   end
 
   def daily_reading_params
-    params.require(:daily_reading).permit(:text_id, :reading_group_id, :session_date)
+    params.require(:daily_reading).permit(:text_id, :reading_group_id, :session_date, :chatroom_id)
   end
 end
