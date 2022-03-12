@@ -123,7 +123,7 @@ puts "Creating daily reading..."
 DailyReading.create!(
   text: Text.first,
   reading_group: ReadingGroup.first,
-  session_date: Date.today,
+  session_date: Date.yesterday,
   objective: "I can identify personification and apply it to my writing",
   cover: "https://res.cloudinary.com/dm37aktki/image/upload/v1646673693/3._SY475__to4onf.jpg",
   excerpt: "
@@ -144,7 +144,7 @@ It was on the corner of the street that he noticed the first sign of something p
 DailyReading.create!(
   text: Text.first,
   reading_group: ReadingGroup.second,
-  session_date: Date.today,
+  session_date: Date.yesterday,
   cover: "https://res.cloudinary.com/dm37aktki/image/upload/v1647083515/24384_kthvgy.jpg",
   objective: "I can make predictions about a story",
   excerpt: '
@@ -173,7 +173,7 @@ Tucker jumped up beside the cricket and looked him all over. “A cricket,” he
 DailyReading.create!(
   text: Text.first,
   reading_group: ReadingGroup.first,
-  session_date: "2022-03-03",
+  session_date: Date.today,
   objective: "I can make predictions about a story",
   cover: "https://res.cloudinary.com/dm37aktki/image/upload/v1646673693/3._SY475__to4onf.jpg",
   excerpt: "
@@ -201,7 +201,7 @@ DailyReading.create!(
   reading_group: ReadingGroup.second,
   cover: "https://res.cloudinary.com/dm37aktki/image/upload/v1647083515/24384_kthvgy.jpg",
   objective: "I can make predictions about a story",
-  session_date: "2022-03-03",
+  session_date: Date.today,
   excerpt: "
   “Well it must have been two—no, three days ago,” Chester Cricket began. “I was sitting on top of my stump, just enjoying the weather and thinking how nice it was that summer had started. I live inside an old tree stump, next to a willow tree, and I often go up to the roof to look around. And I’d been practicing jumping that day too. On the other side of the stump from the willow tree there's a brook that runs past, and I’d been jumping back and forth across it to get my legs in condition for the summer. I do a lot of jumping, you know.”
 “Me too,” said Tucker Mouse. “Especially around the rush hour.”
@@ -219,7 +219,49 @@ DailyReading.create!(
   text: Text.first,
   reading_group: ReadingGroup.first,
   objective: "I can make predictions about a story",
-  session_date: "2022-03-04",
+  session_date: Date.tomorrow,
+  cover: "https://res.cloudinary.com/dm37aktki/image/upload/v1646673693/3._SY475__to4onf.jpg",
+  excerpt: "
+   Mrs Dursley came into the living-room carrying two cups of tea. It was no good. He’d have to say something to her. He cleared his throat nervously. ‘Er – Petunia, dear – you haven’t heard from your sister lately, have you?’
+As he had expected, Mrs Dursley looked shocked and angry. After all, they normally pretended she didn’t have a sister.
+‘No,’ she said sharply. ‘Why?’
+‘Funny stuff on the news,’ Mr Dursley mumbled. ‘Owls ... shooting stars ... and there were a lot of funny-looking people in town today …’
+‘So?’ snapped Mrs Dursley.
+‘Well, I just thought ... maybe ... it was something to do with ... you know ... her lot.’
+Mrs Dursley sipped her tea through pursed lips. Mr Dursley wondered whether he dared tell her he’d heard the name ‘Potter’. He decided he didn’t dare. Instead he said, as casually as he could, ‘Their son – he’d be about Dudley’s age now, wouldn’t he?’
+‘I suppose so,’ said Mrs Dursley stiffly.
+‘What’s his name again? Howard, isn’t it?’
+‘Harry. Nasty, common name, if you ask me.’
+‘Oh, yes,’ said Mr Dursley, his heart sinking horribly. ‘Yes, I quite agree.’
+He didn’t say another word on the subject as they went upstairs to bed. While Mrs Dursley was in the bathroom, Mr Dursley crept to the bedroom window and peered down into the front garden. The cat was still there. It was staring down Privet Drive as though it was waiting for something.
+Was he imagining things? Could all this have anything to do with the Potters? If it did ... if it got out that they were related to a pair of – well, he didn’t think he could bear it.
+The Dursleys got into bed. Mrs Dursley fell asleep quickly but Mr Dursley lay awake, turning it all over in his mind. His last, comforting thought before he fell asleep was that even if the Potters were involved, there was no reason for them to come near him and Mrs Dursley. The Potters knew very well what he and Petunia thought about them and their kind ... He couldn’t see how he and Petunia could get mixed up in anything that might be going on. He yawned and turned over. It couldn’t affect them ...
+How very wrong he was.
+Mr Dursley might have been drifting into an uneasy sleep, but the cat on the wall outside was showing no sign of sleepiness. It was sitting as still as a statue, its eyes fixed unblinkingly on the far corner of Privet Drive. It didn’t so much as quiver when a car door slammed in the next street, nor when two owls swooped overhead. In fact, it was nearly midnight before the cat moved at all.
+A man appeared on the corner the cat had been watching, appeared so suddenly and silently you’d have thought he’d just popped out of the ground. The cat’s tail twitched and its eyes narrowed.
+Nothing like this man had ever been seen in Privet Drive. He was tall, thin and very old, judging by the silver of his hair and beard, which were both long enough to tuck into his belt. He was wearing long robes, a purple cloak which swept the ground and high-heeled, buckled boots. His blue eyes were light, bright and sparkling behind half-moon spectacles and his nose was very long and crooked, as though it had been broken at least twice. This man’s name was Albus Dumbledore.
+Albus Dumbledore didn’t seem to realise that he had just arrived in a street where everything from his name to his boots was unwelcome. He was busy rummaging in his cloak, looking for something. But he did seem to realise he was being watched, because he looked up suddenly at the cat, which was still staring at him from the other end of the street. For some reason, the sight of the cat seemed to amuse him. He chuckled and muttered, ‘I should have known.’
+He had found what he was looking for in his inside pocket. It seemed to be a silver cigarette lighter. He flicked it open, held it up in the air and clicked it. The nearest street lamp went out with a little pop. He clicked it again – the next lamp flickered into darkness. Twelve times he clicked the Put-Outer, until the only lights left in the whole street were two tiny pinpricks in the distance, which were the eyes of the cat watching him. If anyone looked out of their window now, even beady-eyed Mrs Dursley, they wouldn’t be able to see anything that was happening down on the pavement. Dumbledore slipped the Put-Outer back inside his cloak and set off down the street towards number four, where he sat down on the wall next to the cat. He didn’t look at it, but after a moment he spoke to it.
+‘Fancy seeing you here, Professor McGonagall.’
+He turned to smile at the tabby, but it had gone. Instead he was smiling at a rather severe-looking woman who was wearing square glasses exactly the shape of the markings the cat had had around its eyes. She, too, was wearing a cloak, an emerald one. Her black hair was drawn into a tight bun. She looked distinctly ruffled.
+How did you know it was me?’ she asked.
+‘My dear Professor, I’ve never seen a cat sit so stiffly.’
+‘You’d be stiff if you’d been sitting on a brick wall all day,’ said Professor McGonagall.
+‘All day? When you could have been celebrating? I must have passed a dozen feasts and parties on my way here.’
+Professor McGonagall sniffed angrily.
+‘Oh yes, everyone’s celebrating, all right,’ she said impatiently. ‘You’d think they’d be a bit more careful, but no – even the Muggles have noticed something’s going on. It was on their news.’ She jerked her head back at the Dursleys’ dark living-room window. ‘I heard it. Flocks of owls ... shooting stars ... Well, they’re not completely stupid. They were bound to notice something. Shooting stars down in Kent – I’ll bet that was Dedalus Diggle. He never had much sense.’
+‘You can’t blame them,’ said Dumbledore gently. ‘We’ve had precious little to celebrate for eleven years.’
+‘I know that,’ said Professor McGonagall irritably. ‘But that’s no reason to lose our heads. People are being downright careless, out on the streets in broad daylight, not even dressed in Muggle clothes, swapping rumours.’
+She threw a sharp, sideways glance at Dumbledore here, as though hoping he was going to tell her something, but he didn’t, so she went on: ‘A fine thing it would be if, on the very day YouKnow-Who seems to have disappeared at last, the Muggles found out about us all. I suppose he really has gone, Dumbledore?’
+
+  "
+)
+
+DailyReading.create!(
+  text: Text.first,
+  reading_group: ReadingGroup.second,
+  objective: "I can make predictions about a story",
+  session_date: Date.tomorrow,
   cover: "https://res.cloudinary.com/dm37aktki/image/upload/v1646673693/3._SY475__to4onf.jpg",
   excerpt: "
    Mrs Dursley came into the living-room carrying two cups of tea. It was no good. He’d have to say something to her. He cleared his throat nervously. ‘Er – Petunia, dear – you haven’t heard from your sister lately, have you?’
