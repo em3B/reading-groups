@@ -123,7 +123,7 @@ puts "Creating daily reading..."
 DailyReading.create!(
   text: Text.first,
   reading_group: ReadingGroup.first,
-  session_date: Date.today,
+  session_date: Date.yesterday,
   objective: "I can identify personification and apply it to my writing",
   cover: "https://res.cloudinary.com/dm37aktki/image/upload/v1646673693/3._SY475__to4onf.jpg",
   excerpt: "
@@ -144,7 +144,7 @@ It was on the corner of the street that he noticed the first sign of something p
 DailyReading.create!(
   text: Text.first,
   reading_group: ReadingGroup.second,
-  session_date: Date.today,
+  session_date: Date.yesterday,
   objective: "I can make predictions about a story",
   excerpt: '
 Tucker Mouse had been watching the Bellinis and listening to what they said. Next to scrounging, eavesdropping on human beings was what he enjoyed most. That was one of the reasons he lived in the Times Square subway station. As soon as the family disappeared, he darted out across the floor and scooted up to the newsstand. At one side the boards had separated and there was a wide space he could jump through. He’d been in a few times before—just exploring. For a moment he stood under the threelegged stool, letting his eyes get used to the darkness. Then he jumped on it.
@@ -172,7 +172,7 @@ Tucker jumped up beside the cricket and looked him all over. “A cricket,” he
 DailyReading.create!(
   text: Text.first,
   reading_group: ReadingGroup.first,
-  session_date: "2022-03-03",
+  session_date: Date.today,
   objective: "I can make predictions about a story",
   cover: "https://res.cloudinary.com/dm37aktki/image/upload/v1646673693/3._SY475__to4onf.jpg",
   excerpt: "
@@ -199,7 +199,7 @@ DailyReading.create!(
   text: Text.first,
   reading_group: ReadingGroup.second,
   objective: "I can make predictions about a story",
-  session_date: "2022-03-03",
+  session_date: Date.today,
   excerpt: "
   “Well it must have been two—no, three days ago,” Chester Cricket began. “I was sitting on top of my stump, just enjoying the weather and thinking how nice it was that summer had started. I live inside an old tree stump, next to a willow tree, and I often go up to the roof to look around. And I’d been practicing jumping that day too. On the other side of the stump from the willow tree there's a brook that runs past, and I’d been jumping back and forth across it to get my legs in condition for the summer. I do a lot of jumping, you know.”
 “Me too,” said Tucker Mouse. “Especially around the rush hour.”
@@ -217,7 +217,7 @@ DailyReading.create!(
   text: Text.first,
   reading_group: ReadingGroup.first,
   objective: "I can make predictions about a story",
-  session_date: "2022-03-04",
+  session_date: Date.tomorrow,
   cover: "https://res.cloudinary.com/dm37aktki/image/upload/v1646673693/3._SY475__to4onf.jpg",
   excerpt: "
    Mrs Dursley came into the living-room carrying two cups of tea. It was no good. He’d have to say something to her. He cleared his throat nervously. ‘Er – Petunia, dear – you haven’t heard from your sister lately, have you?’
