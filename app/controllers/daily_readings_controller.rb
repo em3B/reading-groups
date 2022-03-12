@@ -12,11 +12,13 @@ class DailyReadingsController < ApplicationController
 
   def show
     @answer = Answer.new
-    if @daily_reading.id == DailyReading.first.id
-      @chatroom = Chatroom.find_by(daily_reading_id: DailyReading.first.id)
-    else
-      @chatroom = Chatroom.find_by(daily_reading_id: DailyReading.second.id)
-    end
+    @chatroom = Chatroom.find_by(daily_reading_id: params[:id])
+
+    # if @daily_reading.id == DailyReading.first.id
+    #   @chatroom = Chatroom.find_by(daily_reading_id: DailyReading.first.id)
+    # else
+    #   @chatroom = Chatroom.find_by(daily_reading_id: DailyReading.second.id)
+    # end
     @message = Message.new
 
     find_students
