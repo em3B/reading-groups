@@ -8,7 +8,7 @@
     <% @daily_readings.each do |dr| %>
       <%= link_to daily_reading_path(dr.id), remote: false do%>
         <div class="subscription-btn text-center">
-          <div class="subscription-img"><%= cl_image_tag(dr.cover)  %></div>
+          <div class="subscription-img"><%= image_tag(dr.cover) %></div>
           <h3 class=" text-center"> <%= dr.session_date.strftime("%d %B")%> </h3>
         </div>
       <% end %>
