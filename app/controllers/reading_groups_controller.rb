@@ -3,7 +3,7 @@ class ReadingGroupsController < ApplicationController
 
   def index
     if current_user.teacher
-      @reading_groups = ReadingGroup.find_all.where(teacher_id: current_user.teacher_id)
+      @reading_groups = ReadingGroup.where(user_id: current_user.id)
     else
       # iterate through daily reading for that rg specifically?
       reading_group_id = current_user.reading_group_id
