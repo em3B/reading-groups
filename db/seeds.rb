@@ -145,6 +145,7 @@ DailyReading.create!(
   text: Text.first,
   reading_group: ReadingGroup.second,
   session_date: Date.yesterday,
+  cover: "https://res.cloudinary.com/dm37aktki/image/upload/v1647083515/24384_kthvgy.jpg",
   objective: "I can make predictions about a story",
   excerpt: '
 Tucker Mouse had been watching the Bellinis and listening to what they said. Next to scrounging, eavesdropping on human beings was what he enjoyed most. That was one of the reasons he lived in the Times Square subway station. As soon as the family disappeared, he darted out across the floor and scooted up to the newsstand. At one side the boards had separated and there was a wide space he could jump through. He’d been in a few times before—just exploring. For a moment he stood under the threelegged stool, letting his eyes get used to the darkness. Then he jumped on it.
@@ -198,6 +199,7 @@ Mr Dursley sat frozen in his armchair. Shooting stars all over Britain? Owls fly
 DailyReading.create!(
   text: Text.first,
   reading_group: ReadingGroup.second,
+  cover: "https://res.cloudinary.com/dm37aktki/image/upload/v1647083515/24384_kthvgy.jpg",
   objective: "I can make predictions about a story",
   session_date: Date.today,
   excerpt: "
