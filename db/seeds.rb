@@ -51,12 +51,12 @@ ReadingGroup.create!(
   user_id: User.find_by(teacher_id: 1).id
 )
 
-User.all.each do |user|
-  if user.teacher_id != 1
-    user.reading_group_id = ReadingGroup.all.ids.sample
-    user.save!
-  end
-end
+# User.all.each do |user|
+#   if user.teacher_id != 1
+#     user.reading_group_id = ReadingGroup.all.ids.sample
+#     user.save!
+#   end
+# end
 
 puts "Done!"
 
@@ -65,7 +65,7 @@ puts "Creating members..."
 User.all.each do |user|
   Member.create!(
     user: user,
-    reading_group: ReadingGroup.first
+    reading_group: ReadingGroup.all.sample
   )
 end
 

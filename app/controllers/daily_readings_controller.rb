@@ -4,27 +4,22 @@ class DailyReadingsController < ApplicationController
 
   def index
     # For student user
-    reading_group_id = current_user.reading_group_id
-    @daily_readings = DailyReading.where(reading_group: reading_group_id)
+    ReadingGroup.all.each do |reading_group|
+      @reading_group = reading_group if reading_group.users.include?(current_user)
+    end
+    @daily_readings = DailyReading.where(reading_group: @reading_group)
   end
 
   def show
     @answer = Answer.new
-    # @chatroom = Chatroom.new
-    # @chatroom.name = current_user.name
     if @daily_reading.id == DailyReading.first.id
       @chatroom = Chatroom.find_by(daily_reading_id: DailyReading.first.id)
     else
       @chatroom = Chatroom.find_by(daily_reading_id: DailyReading.second.id)
     end
-    # @chatroom = Chatroom.new(name: "bundo group")
-    # @chatroom.save!
     @message = Message.new
 
     find_students
-    # @questions = @daily_reading.questions
-    # @answer = Answer.where(daily_reading_id: params[:id], user: current_user) || Answer.new
-    # @answer = Answer.new
     @questions_with_answers = @daily_reading.questions.map do |question|
       {
         question: question,
