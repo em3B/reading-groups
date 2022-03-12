@@ -11,8 +11,12 @@ class ReadingGroupsController < ApplicationController
       end
     else
       # iterate through daily reading for that rg specifically?
-      @daily_reading = DailyReading.where(session_date: Date.today)
-      redirect_to daily_reading_path(@daily_reading.first.id)
+      reading_group_id = current_user.reading_group_id
+      @daily_readings = DailyReading.where(reading_group: reading_group_id)
+      @daily_readings.each do |dr|
+        @daily_reading = DailyReading.where(session_date: Date.today)
+        redirect_to daily_reading_path(@daily_reading.first.id)
+      end
     end
   end
 

@@ -42,8 +42,21 @@ puts "Done!"
 puts "Creating reading group..."
 
 ReadingGroup.create!(
+  name: "Ravenclaw",
   user_id: User.find_by(teacher_id: 1).id
 )
+
+ReadingGroup.create!(
+  name: "Hufflepuff",
+  user_id: User.find_by(teacher_id: 1).id
+)
+
+User.all.each do |user|
+  if user.teacher_id != 1
+    user.reading_group_id = ReadingGroup.all.ids.sample
+    user.save!
+  end
+end
 
 puts "Done!"
 
@@ -130,6 +143,34 @@ It was on the corner of the street that he noticed the first sign of something p
 
 DailyReading.create!(
   text: Text.first,
+  reading_group: ReadingGroup.second,
+  session_date: Date.today,
+  objective: "I can make predictions about a story",
+  excerpt: '
+Tucker Mouse had been watching the Bellinis and listening to what they said. Next to scrounging, eavesdropping on human beings was what he enjoyed most. That was one of the reasons he lived in the Times Square subway station. As soon as the family disappeared, he darted out across the floor and scooted up to the newsstand. At one side the boards had separated and there was a wide space he could jump through. He’d been in a few times before—just exploring. For a moment he stood under the threelegged stool, letting his eyes get used to the darkness. Then he jumped on it.
+“Psst!” he whispered. “Hey, you up there—are you awake?”
+There was no answer.
+“Psst! Psst! Hey!” Tucker whispered again, louder this time.
+From the shelf above came scuffl ing, like little feet feeling their way to the edge. “Who is going ‘psst’?” said a voice.
+“It’s me,” said Tucker. “Down here on the stool.”
+A black head, with two shiny black eyes, peered down at him.
+“Who are you?”
+“A mouse,” said Tucker, “Who are you?”
+“I’m Chester Cricket,” said the cricket. He had a high, musical voice. Everything he said seemed to be spoken to an unheard melody.
+“My name’s Tucker,” said Tucker Mouse. “Can I come up?”
+“I guess so,” said Chester Cricket. “This isn’t my house anyway.”
+Tucker jumped up beside the cricket and looked him all over. “A cricket,” he said admiringly. “So you’re a cricket. I never saw one before.”
+“I’ve seen mice before,” the cricket said. “I knew quite a few back in Connecticut.”
+“Is that where you’re from?” asked Tucker.
+“Yes,” said Chester. “I guess I’ll never see it again,” he added wistfully.
+“How did you get to New York?” asked Tucker Mouse.
+“It’s a long story,” sighed the cricket.
+“Tell me,” said Tucker, settling back on his haunches. He loved to hear stories. It was almost as much fun as eavesdropping— if the story was true.
+  '
+)
+
+DailyReading.create!(
+  text: Text.first,
   reading_group: ReadingGroup.first,
   session_date: "2022-03-03",
   objective: "I can make predictions about a story",
@@ -151,6 +192,24 @@ Mrs Dursley had had a nice, normal day. She told him over dinner all about Mrs N
 And finally, bird-watchers everywhere have reported that the nation’s owls have been behaving very unusually today. Although owls normally hunt at night and are hardly ever seen in daylight, there have been hundreds of sightings of these birds flying in every direction since sunrise. Experts are unable to explain why the owls have suddenly changed their sleeping pattern.’ The news reader allowed himself a grin. ‘Most mysterious. And now, over to Jim McGuffin with the weather. Going to be any more showers of owls tonight, Jim?’
 ‘Well, Ted,’ said the weatherman, ‘I don’t know about that, but it’s not only the owls that have been acting oddly today. Viewers as far apart as Kent, Yorkshire and Dundee have been phoning in to tell me that instead of the rain I promised yesterday, they’ve had a downpour of shooting stars! Perhaps people have been celebrating Bonfire Night early – it’s not until next week, folks! But I can promise a wet night tonight.’
 Mr Dursley sat frozen in his armchair. Shooting stars all over Britain? Owls flying by daylight? Mysterious people in cloaks all over the place? And a whisper, a whisper about the Potters ...
+  "
+)
+
+DailyReading.create!(
+  text: Text.first,
+  reading_group: ReadingGroup.second,
+  objective: "I can make predictions about a story",
+  session_date: "2022-03-03",
+  excerpt: "
+  “Well it must have been two—no, three days ago,” Chester Cricket began. “I was sitting on top of my stump, just enjoying the weather and thinking how nice it was that summer had started. I live inside an old tree stump, next to a willow tree, and I often go up to the roof to look around. And I’d been practicing jumping that day too. On the other side of the stump from the willow tree there's a brook that runs past, and I’d been jumping back and forth across it to get my legs in condition for the summer. I do a lot of jumping, you know.”
+“Me too,” said Tucker Mouse. “Especially around the rush hour.”
+“And I had just finished jumping when I smelled something,” Chester went on, “liverwurst, which I love.”
+“You like liverwurst?” Tucker broke in. “Wait! Wait! Just wait!”
+In one leap, he sprang down all the way from the shelf to the fl oor and dashed over to his drain pipe. Chester shook his head as he watched him go. He thought Tucker was a very excitable person—even for a mouse.
+Inside the drain pipe, Tucker’s nest was a jumble of papers, scraps of cloth, buttons, lost jewelry, small change, and everything else that can be picked up in a subway station. Tucker tossed things left and right in a wild search. Neatness was not one of the things he aimed at in life. At last he discovered what he was looking for: a big piece of liverwurst he had found earlier that evening. It was meant to be for breakfast tomorrow, but he decided that meeting his first cricket was a special occasion. Holding the liverwurst between his teeth, he whisked back to the newsstand.
+“Look!” he said proudly, dropping the meat in front of Chester Cricket. “Liverwurst! You continue the story—we’ll enjoy a snack too.”
+“That’s very nice of you,” said Chester. He was touched that a mouse he had known only a few minutes would share his food with him. “I had a little chocolate before, but besides that, nothing for three days.”
+“Eat! Eat!” said Tucker. He bit the liverwurst into two pieces and gave Chester the bigger one. “So you smelled the liverwurst— then what happened?”
   "
 )
 
@@ -252,29 +311,39 @@ Question.create!(
 
 counter = 0
 
-3.times do
-  Question.create!(
-    content: QUESTION_CONTENTS[counter],
-    active: true,
-    daily_reading_id: DailyReading.third.id,
-    extension: false
+DailyReading.all.each do |dr|
+  if dr.id != DailyReading.first.id
+    3.times do
+      Question.create!(
+        content: QUESTION_CONTENTS[counter],
+        active: true,
+        daily_reading_id: dr.id,
+        extension: false
   )
-  counter += 1
+    counter += 1
+    end
+  end
 end
 
-Question.create!(
-  content: "Use your prediction above to write your own sequel about what comes next.",
-  active: true,
-  daily_reading_id: DailyReading.third.id,
-  extension: true
+DailyReading.all.each do |dr|
+  if dr.id != DailyReading.first.id
+    Question.create!(
+      content: "Use your prediction above to write your own sequel about what comes next.",
+      active: true,
+      daily_reading_id: dr.id,
+      extension: true
 )
+  end
+end
 
 puts "Creating Chatrooms..."
 
-Chatroom.create!(
-  daily_reading_id: DailyReading.first.id,
-  name: "Bundo"
-)
+DailyReading.all.each do |dr|
+  Chatroom.create!(
+    daily_reading_id: dr.id,
+    name: dr.reading_group.name
+  )
+end
 
 puts "Done!"
 
