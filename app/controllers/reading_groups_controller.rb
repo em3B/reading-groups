@@ -3,20 +3,13 @@ class ReadingGroupsController < ApplicationController
 
   def index
     if current_user.teacher
-      @reading_groups = []
-      ReadingGroup.all.each do |rg|
-        if rg.users.include?(current_user)
-          @reading_groups << rg
-        end
-      end
+      @reading_groups = ReadingGroup.find_all.where(teacher_id: current_user.teacher_id)
     else
       # iterate through daily reading for that rg specifically?
       reading_group_id = current_user.reading_group_id
       @daily_readings = DailyReading.where(reading_group: reading_group_id)
-      @daily_readings.each do |dr|
-        @daily_reading = DailyReading.where(session_date: Date.today)
-        redirect_to daily_reading_path(@daily_reading.first.id)
-      end
+      @daily_reading = @daily_readings.select { |dr| dr.session_date == Date.today }
+      redirect_to daily_reading_path(@daily_reading.first.id)
     end
   end
 
