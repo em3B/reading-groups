@@ -40,15 +40,26 @@ $dark_orange: #B13A1A;
 
 .student-list {
   display: table-cell;
+  position: fixed;
+  top: 52.6;
 }
 
 .student-list li {
   list-style: none;
   text-align: center;
-  color: $lightest_blue;
+  background-color: $light_orange;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
 }
 .student-list li.present {
-  color: green
+  list-style: none;
+  text-align: center;
+  background-color: $light_orange;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  border: 4px solid $dark_orange;
 }
 
 .daily-questions {
