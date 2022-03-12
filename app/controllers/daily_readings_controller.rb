@@ -12,7 +12,7 @@ class DailyReadingsController < ApplicationController
     @answer = Answer.new
     # @chatroom = Chatroom.new
     # @chatroom.name = current_user.name
-    if current_user.reading_group_id == ReadingGroup.first.id
+    if @daily_reading.id == DailyReading.first.id
       @chatroom = Chatroom.find_by(daily_reading_id: DailyReading.first.id)
     else
       @chatroom = Chatroom.find_by(daily_reading_id: DailyReading.second.id)
