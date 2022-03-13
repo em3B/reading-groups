@@ -18,12 +18,13 @@
     <%# question/student_list column %>
     <% if current_user.teacher %>
       <ul class="student-list">
+        <h3>Today's Students:</h3>
         <br><br>
         <% @students.each do |student| %>
           <% if student.online? %>
             <li class="present"> <%= student.name[0..1] %> </li><br>
           <% else %>
-            <li class="absent"> <%= student.name[0..1] %> </li><br>
+            <li> <%= student.name[0..1] %> </li><br>
           <% end %>
         <% end %>
       </ul>
