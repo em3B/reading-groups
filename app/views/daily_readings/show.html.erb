@@ -6,7 +6,7 @@
     <%# <div class="daily-sidebar"></div> %>
     <%# text column %>
 
-    <%= content_tag :p, flash[:notice], :class => "flash notice" if flash[:notice] %>
+    <%# <%= content_tag :p, flash[:notice], :class => "flash notice" if flash[:notice] %>
     <div class="daily-text">
 
       <h3>Session Date: <%= @daily_reading.session_date.strftime("%d %B")  %></h3>
@@ -93,17 +93,29 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form>
+                  <div class="mb-3">
+                    <%= simple_form_for(q_w_a[:answer]) do |f| %>
+                      <%= f.hidden_field :question_id, value: q_w_a[:question].id %>
+                      <%= f.hidden_field :daily_reading_id, value: @daily_reading.id %>
+                      <%= f.label :content, class: "col-form-label" %>
+                      <%= f.text_field :content, class: "form-control", id: "student-answer", placeholder: "Type your answer here" %>
+                      <%= f.submit "Submit", class: "modal-questions-btn m-3"%>
+                    <% end %>
+                  </div>
+
+                  <%# <form>
                     <div class="mb-3">
                       <label for="recipient-name" class="col-form-label">My Answer:</label>
                       <textarea rows="16" cols="180" class="form-control" id="student-answer"></textarea>
                     </div>
-                  </form>
+                  </form> %>
+
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <input type="button" class="modal-questions-btn" value="Save Changes">
+                  <%# <input type="button" class="modal-questions-btn" value="Save Changes"> %>
                 </div>
+
               </div>
             </div>
           <% end %>
