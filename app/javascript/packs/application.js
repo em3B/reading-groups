@@ -32,7 +32,6 @@ import {openForm, closeForm} from '../components/chat';
 import {initChatroomCable} from '../channels/chatroom_channel';
 import {highlight} from '../components/highlight';
 import {unlight} from '../components/unlight';
-import {addTick} from '../components/tick';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -45,7 +44,6 @@ document.addEventListener('turbolinks:load', () => {
     closeForm();
   }
 
-  addTick();
   unlight();
   initChatroomCable();
   highlight();
