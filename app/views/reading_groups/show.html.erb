@@ -4,16 +4,30 @@
   <h1 class="text-center font-weight-bold text-white pt-5">Reading Group: <%= @reading_group.name %></h1>
   <div class="subscription-btn-group">
     <% @reading_group.daily_readings.each do |dr| %>
-      <% if dr.session_date == Date.today %>
+      <% if dr.session_date == Date.today && dr.questions.count == dr.answers.where(user_id: current_user.id).count  %>
         <%= link_to daily_reading_path(dr.id), remote: false do%>
-          <div class="book-btn text-center">
+          <div class="book-btn check done-day text-center">
             <div class="cover-img"><%= image_tag(dr.cover) %></div>
             <h3 class=" text-center"> <%= dr.session_date.strftime("%d %B")%> </h3>
           </div>
         <% end %>
+      <% elsif dr.session_date == Date.today && dr.questions.count != dr.answers.where(user_id: current_user.id).count%>
+        <%= link_to daily_reading_path(dr.id), remote: false do%>
+          <div class="book-btn undone-day text-center">
+            <div class="cover-img"><%= image_tag(dr.cover) %></div>
+            <h3 class=" text-center"> <%= dr.session_date.strftime("%d %B")%> </h3>
+          </div>
+        <% end %>
+      <% elsif dr.session_date != Date.today && dr.questions.count == dr.answers.where(user_id: current_user.id).count  %>
+        <%= link_to daily_reading_path(dr.id), remote: false do%>
+            <div class="subscription-btn done-future check text-center">
+              <div class="cover-img"><%= image_tag(dr.cover) %></div>
+              <h3 class=" text-center"> <%= dr.session_date.strftime("%d %B")%> </h3>
+            </div>
+          <% end %>
       <% else %>
         <%= link_to daily_reading_path(dr.id), remote: false do%>
-            <div class="subscription-btn text-center">
+            <div class="subscription-btn undone-future text-center">
               <div class="cover-img"><%= image_tag(dr.cover) %></div>
               <h3 class=" text-center"> <%= dr.session_date.strftime("%d %B")%> </h3>
             </div>
