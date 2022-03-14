@@ -12,9 +12,10 @@ class AnswersController < ApplicationController
   def create
     @answer = Answer.new(answer_params)
     @answer.user = current_user
+
     if @answer.save
-      flash[:notice] = "Answer saved!"
-      redirect_to daily_reading_path(params[:answer][:daily_reading_id].to_i)
+      # flash[:notice] = "Answer saved!"
+      redirect_to daily_reading_path(params[:answer][:daily_reading_id].to_i), notice: "Answer saved!"
     else
       render :new
     end
