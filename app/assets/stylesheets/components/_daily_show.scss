@@ -62,7 +62,7 @@ $dark_orange: #B13A1A;
 }
 .student-list li.present {
   opacity: 0.4;
-  border: 4px solid darkgreen;
+  border: 4px solid $light_blue;
 }
 
 .daily-questions {
@@ -147,4 +147,10 @@ $dark_orange: #B13A1A;
   color: $dark_orange;
   font-weight: bold;
   text-decoration: none;
+}
+
+.check {
+  opacity: 40%;
+  z-index: 100;
+  background: url("https://res.cloudinary.com/dm37aktki/image/upload/c_scale,w_40/v1647272477/Depositphotos_10916813_S_vz157v.png") no-repeat top right;
 }
