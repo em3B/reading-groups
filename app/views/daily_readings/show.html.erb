@@ -24,7 +24,7 @@
           <% if student.online? %>
             <li class="present"> <%= student.name[0..1] %> </li><br>
           <% else %>
-            <li> <%= student.name[0..1] %> </li><br>
+            <li class="absent"> <%= student.name[0..1] %> </li><br>
           <% end %>
         <% end %>
       </ul>
