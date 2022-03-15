@@ -99,6 +99,9 @@
                           <%= f.hidden_field :daily_reading_id, value: @daily_reading.id %>
                           <%= f.label :content, class: "col-form-label" %>
                           <%= f.text_field :content, class: "form-control", id: "student-answer", placeholder: "Type your answer here" %>
+                          <br>
+                          <%= f.label "Teacher:"  %>
+                          <%= f.label "Well done! Can you find another example of this in the text?" %>
                           <%= f.submit "Submit", class: "modal-questions-btn m-3"%>
                         <% end %>
                       </div>
@@ -177,6 +180,8 @@
                         <%= f.hidden_field :daily_reading_id, value: @daily_reading.id %>
                         <%= f.label :content, class: "col-form-label" %>
                         <%= f.text_area :content, class: "form-control", rows: "16", cols: "180", id: "student-answer", placeholder: "Type your answer here" %>
+                        <br>
+                        <%= f.label "Well done! Can you find another example of this in the text?" %>
                         <%= f.submit "Submit", class: "modal-questions-btn m-3"%>
                       <% end %>
                     </div>
