@@ -1,42 +1,24 @@
 
 <%= cl_video_tag("https://res.cloudinary.com/dm37aktki/video/upload/v1646585145/pexels-marta-wave-6436524_kxqi9w.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video") %>
 <br>
-<div class="text-center font-weight-bold ine-height-xl pt-5 c-2-a">
-    <h1><em>Online Guided Reading Today</em></h1><br><br>
-    <h1 class="m-3">Why?</h1>
-    <br><br>
-    <h1>🖍 Pain-free assessment</h1>
-    <h1>📚 No extra books needed</h1>
-    <h1>🙋🏽‍♀️ Communicate easily</h1>
+<br>
+<br>
+<br>
+<br>
+<div class="text-center font-weight-bold ine-height-xl">
+    <h3><em>Why Online Guided Reading?</em></h3><br>
+    <h5>🖍 Pain-free assessment</h5>
+    <h5>📚 No extra books needed</h5>
+    <h5>🙋🏽‍♀️ Communicate easily</h5>
 </div>
-<br>
-<br>
 <%# subscription options %>
   <div class="subscription-btn-group pt-5">
-    <%= link_to "#" do %>
-      <button class="subscription-btn">
-        <div class="subscription-img">
-          <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645639935/Vector_illustration_of_High_school_building._Vector_School_Building_jcowx0.jpg") %>
-        </div>
-        <h4 class="fancy-link"><%= link_to "School Subscription", "#"  %></h4>
-      </button>
-    <% end %>
-
-    <%= link_to "#" do  %>
-      <button class="subscription-btn">
-        <div class="subscription-img">
-          <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645639907/Depositphotos_264171728_S_yf3twi.jpg") %>
-        </div>
-        <h4 class="fancy-link"><%= link_to "Family Subscription", "#" %></h4>
-      </button>
-    <% end %>
 
     <%= link_to reading_groups_path do  %>
-      <button class="subscription-btn">
+      <button class="subscription-btn" id="free-trial">
         <div class="subscription-img">
           <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645639917/Depositphotos_57293061_S_mnbcls.jpg") %>
         </div>
-        <h4 class="fancy-link"><%= link_to "Free Demo", reading_groups_path %></h4>
       </button>
     <% end %>
 

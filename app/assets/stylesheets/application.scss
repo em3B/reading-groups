@@ -231,7 +231,7 @@ a {
 .subscription-btn {
   border-radius: 7px;
   padding: 40px;
-  margin: 50px;
+  // margin: 50px;
   height: 300px;
   width: 300px;
   background-color: $lightest_blue;
@@ -301,4 +301,12 @@ a {
   height: 300px;
   margin: 24px;
   align-items: center;
+}
+#free-trial {
+  padding: 20px;
+  width: 210px;
+  height: 210px
+}
+#free-trial img {
+  width: 120px;
 }
