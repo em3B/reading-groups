@@ -282,6 +282,8 @@ counter = 0
   active: true,
   extension: false
 )
+  p counter
+  p FIRST_QUESTIONS[counter]
   counter += 1
 end
 
@@ -292,37 +294,37 @@ Question.create!(
   extension: true
 )
 
-counter = 0
+# counter = 0
 
-3.times do
-  Question.create!(
-    content: QUESTION_CONTENTS[counter],
-    active: true,
-    daily_reading_id: DailyReading.second.id,
-    extension: false
-  )
-  counter += 1
-end
+# 3.times do
+#   Question.create!(
+#     content: QUESTION_CONTENTS[counter],
+#     active: true,
+#     daily_reading_id: DailyReading.second.id,
+#     extension: false
+#   )
+#   counter += 1
+# end
 
-Question.create!(
-  content: "Use your prediction above to write your own sequel about what comes next.",
-  active: true,
-  daily_reading_id: DailyReading.second.id,
-  extension: true
-)
+# Question.create!(
+#   content: "Use your prediction above to write your own sequel about what comes next.",
+#   active: true,
+#   daily_reading_id: DailyReading.second.id,
+#   extension: true
+# )
 
-counter = 0
 
 DailyReading.all.each do |dr|
-  if dr.id != DailyReading.first.id
-    3.times do
-      Question.create!(
-        content: QUESTION_CONTENTS[counter],
-        active: true,
-        daily_reading_id: dr.id,
-        extension: false
-  )
-    counter += 1
+  counter = 0
+    if dr.id != DailyReading.first.id
+      3.times do
+        Question.create!(
+          content: QUESTION_CONTENTS[counter],
+          active: true,
+          daily_reading_id: dr.id,
+          extension: false
+      )
+      counter += 1
     end
   end
 end
