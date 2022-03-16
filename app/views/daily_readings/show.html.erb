@@ -17,17 +17,21 @@
     </div>
     <%# question/student_list column %>
     <% if current_user.teacher %>
-      <ul class="student-list">
-        <h3>Today's Students:</h3>
-        <br><br>
-        <% @students.each do |student| %>
-          <% if student.online? %>
-            <li class="present"> <%= student.name[0..1] %> </li><br>
-          <% else %>
-            <li class="absent"> <%= student.name[0..1] %> </li><br>
+      <div class="daily-questions align-items-center">
+        <%= render "shared/questions" %>
+
+        <ul class="student-list">
+          <h3>Today's Students:</h3>
+          <br><br>
+          <% @students.each do |student| %>
+            <% if student.online? %>
+              <li class="present"> <%= student.name[0..1] %> </li><br>
+            <% else %>
+              <li class="absent"> <%= student.name[0..1] %> </li><br>
+            <% end %>
           <% end %>
-        <% end %>
-      </ul>
+        </ul>
+      </div>
     <% else %>
       <div class="daily-questions">
         <h3 class="text-center font-weight-bold text-white pt-5">Answer Questions:</h3>
