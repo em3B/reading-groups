@@ -41,6 +41,7 @@ $dark_orange: #B13A1A;
 .student-list {
   display: table-cell;
   margin-left: 60%;
+  max-width: 140px;
 }
 
 .student-list h3 {
@@ -54,9 +55,8 @@ $dark_orange: #B13A1A;
 
 .student-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
-
 .student-list li {
   list-style: none;
   text-align: center;
