@@ -19,7 +19,7 @@
     <% if current_user.teacher %>
       <div class="daily-questions">
 
-        <div>
+        <div class="daily-questions-test">
           <div>
             <%= render "shared/questions" %>
           </div>
@@ -27,15 +27,15 @@
           <div class="student-list">
             <h3>Register:</h3>
             <br><br>
-            <ul class="student-grid">
+            <div class="student-grid">
               <% @students.each do |student| %>
                 <% if student.online? %>
-                  <li class="present"> <%= student.name[0..1] %> </li>
+                  <div class="student-item present"> <%= student.name[0..1] %> </div>
                 <% else %>
-                  <li class="absent"> <%= student.name[0..1] %> </li>
+                  <div class="student-item absent"> <%= student.name[0..1] %> </div>
                 <% end %>
               <% end %>
-            </ul>
+            </div>
           </div>
         </div>
 

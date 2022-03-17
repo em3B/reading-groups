@@ -37,57 +37,68 @@ $dark_orange: #B13A1A;
 .no-highlight {
   background-color: $dyslexia_background;
 }
-.student-list {
-  display: table-cell;
-  margin-left: 60%;
-  max-width: 140px;
-}
+
+// .student-list {
+//   display: table-cell;
+//   margin-left: 60%;
+//   max-width: 140px;
+// }
 // hello
 .student-list h3 {
   font-weight: bold;
   color: white;
-  margin-top: 50px;
-  margin-left: 110px;
-  margin-bottom: -30px;
-  width: 100%;
 }
 
 .student-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
 }
-.student-list li {
-  list-style: none;
+
+.student-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.student-item {
   text-align: center;
   background-color: $light_orange;
   border-radius: 50%;
   width: 58px;
   height: 58px;
   padding-top: 14px;
-  margin-top: 30px;
-  margin-left: 37px;
+  // margin-top: 30px;
+  // margin-left: 37px;
 }
 
-.student-list li.absent {
+.absent {
   opacity: 1;
   border: 4px solid $dark_orange;
 }
-.student-list li.present {
+.present {
   opacity: 0.4;
   border: 4px solid $light_blue;
 }
 
 .daily-questions {
   display: table-cell;
-  align-items: left;
-  border-spacing: 0px;
-  table-layout: fixed;
-  margin-left: auto;
-  margin-right: auto;
-  // width: 310px;
-  max-width: 100px;
-  overflow-wrap: break-word;
+  // align-items: left;
+  // border-spacing: 0px;
+  // table-layout: fixed;
+  // margin-left: auto;
+  // margin-right: auto;
+  // // width: 310px;
+  // max-width: 100px;
+  // overflow-wrap: break-word;
 }
+
+.daily-questions-test {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .question-buttons {
   margin: 48px;
   display: flex;
