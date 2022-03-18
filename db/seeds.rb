@@ -15,9 +15,9 @@ puts "Done!"
 puts "Creating teacher..."
 
 User.create!(
-  email: "emily@hogwarts.ac.uk",
+  email: "josh@hogwarts.ac.uk",
   password: '123456',
-  name: "Emily",
+  name: "Josh",
   teacher: true,
   school_name: "Hogwarts",
   teacher_id: 1
