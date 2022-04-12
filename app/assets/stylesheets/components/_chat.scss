@@ -85,3 +85,7 @@ $dark_orange: #B13A1A;
 .form-container .btn-chat:hover, .open-button:hover {
   opacity: 1;
 }
+div#messages {
+  overflow-y: scroll;
+  height: 180px;
+}
