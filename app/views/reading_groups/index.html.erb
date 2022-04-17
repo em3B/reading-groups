@@ -19,17 +19,37 @@
     </div>
   <%# opening page for teachers: %>
   <% else %>
-    <h1 class="first-action text-center font-weight-bold text-white pt-5">What do you want to do?</h1>
-    <div class="subscription-btn-group">
-      <div class="subscription-btn text-center first-action">
+  <%# top heading %>
+    <h1 class="text-center font-weight-bold text-white pt-5 top-heading active">What do you want to do?</h1>
+    <%# first list of home options for teacher %>
+    <div class="subscription-btn-group active">
+      <div class="subscription-btn text-center new-group">
         <div class="cover-img"><%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1650012851/Depositphotos_13604819_S_tulydn.jpg")  %></div>
         <h3 class="text-center">Add a New Group</h3>
       </div>
-      <div class="subscription-btn text-center first-action">
+      <div class="subscription-btn text-center edit-group">
         <div class="cover-img"><%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1650012851/Depositphotos_13604819_S_tulydn.jpg")  %></div>
         <h3 class="text-center">Edit a Group</h3>
       </div>
     </div>
+
+    <%# options if you click on "Edit a Group" or if you complete adding a new group %>
+    <div class="subscription-btn-group invisible inactive my-groups">
+
+      <% @reading_groups.each do |rg| %>
+
+        <%= link_to reading_group_path(rg.id) do %>
+          <div class="subscription-btn text-center #{rg_button}">
+            <div class="cover-img"><%= cl_image_tag(rg.daily_readings.first.cover)  %></div>
+            <h3 class="text-center"><%= rg.name  %></h3>
+          </div>
+        <% end %>
+
+      <% end %>
+    </div>
+
+    <%# form if you click on "Add a new group" %>
+
   <% end %>
   <div class="push"></div>
 </div>

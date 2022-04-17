@@ -3,7 +3,11 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+//= require jquery
+//= require jquery_ujs
 //= require jquery.turbolinks
+//= require turbolinks
+//= require_tree .
 
 
 import Rails from "@rails/ujs";
@@ -33,6 +37,7 @@ import {initChatroomCable} from '../channels/chatroom_channel';
 import {highlight} from '../components/highlight';
 import {unlight} from '../components/unlight';
 import {scrollToEnd} from '../components/chatscroll';
+import {editGroup} from '../components/editgroup';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -45,6 +50,7 @@ document.addEventListener('turbolinks:load', () => {
     closeForm();
   }
 
+  editGroup();
   scrollToEnd();
   unlight();
   initChatroomCable();
