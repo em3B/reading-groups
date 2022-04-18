@@ -23,8 +23,8 @@ gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 
 # jquery
-gem 'jquery-rails'
 gem 'jquery-turbolinks'
+gem 'jquery-rails'
 # cloudinary -- images
 gem 'cloudinary', '~> 1.16.0'
 
