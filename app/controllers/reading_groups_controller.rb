@@ -15,6 +15,10 @@ class ReadingGroupsController < ApplicationController
     @answer = Answer.new
   end
 
+  def edit
+    @reading_group = ReadingGroup.find(params[:id])
+  end
+
   private
 
   def find_reading_group
