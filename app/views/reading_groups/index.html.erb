@@ -38,8 +38,8 @@
 
       <% @reading_groups.each do |rg| %>
 
-        <%= link_to reading_group_path(rg.id) do %>
-          <div class="subscription-btn text-center #{rg_button}">
+        <%= link_to edit_reading_group_path(rg.id) do %>
+          <div class="subscription-btn group-name text-center #{rg_button}">
             <div class="cover-img"><%= cl_image_tag(rg.daily_readings.first.cover)  %></div>
             <h3 class="text-center"><%= rg.name  %></h3>
           </div>
