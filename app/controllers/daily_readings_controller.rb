@@ -24,6 +24,19 @@ class DailyReadingsController < ApplicationController
     end
   end
 
+  def new
+    @daily_reading = DailyReading.new
+  end
+
+  def create
+    @daily_reading = DailyReading.new(daily_reading_params)
+    if @daily_reading.save
+      redirect_to daily_reading_path(@daily_reading)
+    else
+      render :new
+    end
+  end
+
   private
 
   def find_daily_reading

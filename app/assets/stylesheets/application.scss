@@ -7,6 +7,8 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "pickadate/default";
+@import "pickadate/default.date";
 
 // Your CSS partials
 @import "components/index";
@@ -16,6 +18,10 @@
 @import "components/daily_show";
 @import "components/chat";
 @import "components/cover_btn";
+
+//= require pickadate/picker
+//= require pickadate/picker.date
+//= require pickadate/picker.time
 
 // colours
 $dyslexia_background: #FFFBF7;
@@ -314,4 +320,26 @@ a {
 
 .invisible {
   display: none;
+}
+
+input[type=file]::file-selector-button {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient($coral, $dark_orange);
+  transition: background 0.3s ease;
+  border: 1px solid $dark_orange;
+  margin: 10px;
+  width: 30%;
+
+  &:hover {
+    background: linear-gradient($coral, $dark_orange);
+    color: white;
+    opacity: .8;
+  }
+}
+
+.category-selector+label {
+  cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
 }
