@@ -50,8 +50,8 @@ document.addEventListener('turbolinks:load', () => {
     openForm();
     closeForm();
   }
-  addText();
   editGroup();
+  addText();
   scrollToEnd();
   unlight();
   initChatroomCable();
