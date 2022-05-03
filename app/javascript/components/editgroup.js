@@ -5,6 +5,7 @@ function editGroup() {
   const allGroups = document.querySelector(".my-groups");
 
   button.addEventListener("click", function() {
+    console.log("hi");
     $(".active").fadeOut();
     heading.innerHTML = "Select a Group";
     $(".top-heading").fadeIn("slow");

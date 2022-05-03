@@ -38,6 +38,7 @@ import {highlight} from '../components/highlight';
 import {unlight} from '../components/unlight';
 import {scrollToEnd} from '../components/chatscroll';
 import {editGroup} from '../components/editgroup';
+import {addText} from '../components/addtext';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -49,8 +50,8 @@ document.addEventListener('turbolinks:load', () => {
     openForm();
     closeForm();
   }
-
   editGroup();
+  addText();
   scrollToEnd();
   unlight();
   initChatroomCable();

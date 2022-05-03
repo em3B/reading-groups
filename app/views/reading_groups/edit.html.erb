@@ -5,10 +5,12 @@
 
     <%# options if you click on an existing group %>
   <div class="subscription-btn-group inactive my-group-actions">
-    <div class="subscription-btn text-center">
-      <div class="cover-img"><%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1650012851/Depositphotos_13604819_S_tulydn.jpg")  %></div>
-      <h3 class="text-center">Add a Reading</h3>
-    </div>
+    <%= link_to new_daily_reading_path do  %>
+      <div class="subscription-btn text-center">
+        <div class="cover-img"><%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1650012851/Depositphotos_13604819_S_tulydn.jpg")  %></div>
+        <h3 class="text-center">Add a Reading</h3>
+      </div>
+    <% end %>
     <%= link_to reading_group_path(@reading_group.id) do %>
       <div class="subscription-btn text-center">
         <div class="cover-img"><%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1650012851/Depositphotos_13604819_S_tulydn.jpg")  %></div>
