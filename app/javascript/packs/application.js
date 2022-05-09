@@ -38,21 +38,34 @@ import {highlight} from '../components/highlight';
 import {unlight} from '../components/unlight';
 import {scrollToEnd} from '../components/chatscroll';
 import {editGroup} from '../components/editgroup';
+import { changeStudents } from "../components/changestudents";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   const element = document.querySelector(".open-button");
   const cancel = document.querySelector("#btn-cancel");
+  const text = document.querySelector(".daily-text");
+  const button = document.querySelector(".edit-group");
+  const studentsBtn = document.querySelector("#change-students");
+  const message = document.querySelector(".message-container");
 
   if (element && cancel) {
     openForm();
     closeForm();
   }
-
-  editGroup();
-  scrollToEnd();
-  unlight();
-  initChatroomCable();
-  highlight();
+  if (button) {
+    editGroup();
+  }
+  if (studentsBtn) {
+    changeStudents();
+  }
+  if (text) {
+    unlight();
+    highlight();
+  }
+  if (message) {
+    scrollToEnd();
+    initChatroomCable();
+  }
 });

@@ -1,30 +1,32 @@
+<div class="push"></div>
 
 <%= cl_video_tag("https://res.cloudinary.com/dm37aktki/video/upload/v1646585145/pexels-marta-wave-6436524_kxqi9w.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video") %>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="text-center font-weight-bold ine-height-xl">
+<div class="push"></div>
+
+<div class="text-center font-weight-bold line-height-xl col-md-auto">
+
+  <div class="box">
     <h3><em>Why Online Guided Reading?</em></h3><br>
     <h5>🖍 Pain-free assessment</h5>
     <h5>📚 No extra books needed</h5>
     <h5>🙋🏽‍♀️ Communicate easily</h5>
-</div>
-<%# subscription options %>
-  <div class="subscription-btn-group pt-5">
+  </div>
+  <%# subscription options %>
+  <div class="subscription-btn-group pt-5 col-md-auto">
 
     <%= link_to reading_groups_path do  %>
       <button class="subscription-btn" id="free-trial">
         <div class="subscription-img">
           <%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/v1645639917/Depositphotos_57293061_S_mnbcls.jpg") %>
-        </div>
+
       </button>
     <% end %>
 
   </div>
+</div>
 
-  </div>
+
+
 
   <%# signup %>
   <%# <div class="guided-reading-intro mr-5">

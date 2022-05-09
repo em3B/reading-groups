@@ -1,10 +1,10 @@
+
 <div class="wrapper">
-  <div class="push"></div>
   <h1 class="text-center font-weight-bold text-white pt-5">Welcome, <%= current_user.name  %>!</h1>
-  <h1 class="text-center font-weight-bold text-white pt-5">What would you like to do with this reading group?</h1>
+  <h1 class="text-center font-weight-bold text-white pt-5 instructions">What would you like to do with this reading group?</h1>
 
     <%# options if you click on an existing group %>
-  <div class="subscription-btn-group inactive my-group-actions">
+  <div class="subscription-btn-group inactive my-group-actions main-edit-buttons active">
     <div class="subscription-btn text-center">
       <div class="cover-img"><%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1650012851/Depositphotos_13604819_S_tulydn.jpg")  %></div>
       <h3 class="text-center">Add a Reading</h3>
@@ -15,7 +15,7 @@
         <h3 class="text-center">Go To Readings</h3>
       </div>
     <% end %>
-    <div class="subscription-btn text-center">
+    <div class="subscription-btn text-center" id="change-students">
       <div class="cover-img"><%= cl_image_tag("https://res.cloudinary.com/dm37aktki/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1650012851/Depositphotos_13604819_S_tulydn.jpg")  %></div>
       <h3 class="text-center">Change Students</h3>
     </div>
@@ -24,4 +24,22 @@
       <h3 class="text-center">Gradebook</h3>
     </div>
   </div>
+
+  <%# if you click on "change students" %>
+  <div class="invisible reading-group-form text-center pt-4">
+
+    <%= simple_form_for @reading_group do |f|  %>
+
+      <% @reading_group.users.each do |u| %>
+        <div class="text-center text-white">
+          <%= f.check_box :id, id: :todo, :default => false, 'data-content' => "#{u.name}", method: :delete %>
+          <%= f.label "#{u.name}", for: :todo, 'data-content' => "#{u.name}", method: :delete %>
+        </div>
+      <% end %><br>
+
+    <% end %>
+  </div>
+
+  <div class="push"></div>
+  <div class="push"></div>
 </div>
