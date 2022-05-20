@@ -40,6 +40,7 @@ import {scrollToEnd} from '../components/chatscroll';
 import {editGroup} from '../components/editgroup';
 import { changeStudents } from "../components/changestudents";
 
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();

@@ -1,0 +1,59 @@
+<div class="wrapper">
+  <div class="push"></div>
+  <div class="push"></div>
+  <div class="login-form">
+    <%= simple_form_for(@daily_reading) do |f| %>
+      <div class="form-inputs">
+        <h1 class="p-4">Select a Reading Group for this text.</h1>
+        <% categories = [] %>
+        <% ReadingGroup.all.each do |rg| %>
+          <% categories.append(rg.name) %>
+        <% end %>
+        <%= f.input :reading_group_id,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            collection: categories %>
+        <h1 class="p-4">When will they read this text?</h1>
+        <%= f.date_field :session_date, as: :string, value: f.object.try(:strftime,"%m/%d/%Y"), class: 'form-control p-4' %>
+        <div class="file-type-question">
+          <h1 class="attach-question-heading p-4">Would you like to paste text or attach a file?</h1>
+          <div class="radio-button file-radio-btn-paste">
+            <%= f.input :file_type,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            collection: ["Paste Text"] %>
+          </div>
+          <div class="radio-button file-radio-btn-attach">
+            <%= f.input :file_type,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            collection: ["Attach a File"] %>
+          </div>
+        </div>
+        <%# if you want to paste text %>
+        <div class="paste-text p-4 invisible">
+          <%= f.text_area :excerpt, data: { editor: 'markdown' }, rows: 10, style: 'width:500px' %>
+        </div>
+        <%# if you want to attach file %>
+        <div class="attach-file invisible">
+          <%= f.input :excerpt, as: :file, type: "btn btn-default btn-primary" %>
+        </div>
+      </div>
+
+      <div class="form-actions p-4">
+        <%= f.button :submit, "Add Text", class: "btn btn-default btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="push"></div>
+  <div class="push"></div>
+</div>
