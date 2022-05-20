@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div class="push"></div>
+
   <h1 class="text-center font-weight-bold text-white pt-5">Welcome, <%= current_user.name  %>!</h1>
   <%# opening page for students: %>
   <% if current_user.teacher == false %>
@@ -33,6 +33,7 @@
       </div>
     </div>
 
+
     <%# options if you click on "Edit a Group" or if you complete adding a new group %>
     <div class="subscription-btn-group invisible inactive my-groups">
 
@@ -52,4 +53,5 @@
 
   <% end %>
   <div class="push"></div>
+
 </div>

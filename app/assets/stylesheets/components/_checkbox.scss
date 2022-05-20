@@ -1,0 +1,92 @@
+
+// colours
+$dyslexia_background: #FFFBF7;
+$lightest_blue: #E6F0F3;
+$light_blue: #C8E4EE;
+$light_orange: #F38A63;
+$coral: #F16B3A;
+$medium_orange: #DB6328;
+$dark_orange: #B13A1A;
+$black: #363839;
+$lightgray: #9c9e9f;
+$gray: #bdc1c6;
+
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+// body {
+//   font-family: 'Source Sans Pro', sans-serif;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   margin: 0;
+//   min-height: 100vh;
+// }
+
+input[type="checkbox"] {
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+  color: $black;
+  border: 1px solid $gray;
+  border-radius: 4px;
+  appearance: none;
+  outline: 0;
+  cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
+  transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+
+  &::before {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 2px;
+    left: 7px;
+    width: 8px;
+    height: 14px;
+    border-style: solid;
+    border-color: $black;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+
+  &:checked {
+    color: $white;
+    border-color: $light_blue;
+    background: $light_blue;
+
+    &::before {
+      opacity: 1;
+    }
+
+    ~label::before {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+}
+
+label {
+  position: relative;
+  cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
+  font-size: 1.5em;
+  font-weight: 600;
+  padding: 0 0.25em 0;
+  user-select: none;
+
+  &::before {
+    position: absolute;
+    content: attr(data-content);
+    color: $lightgray;
+    clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+    text-decoration: line-through;
+    text-decoration-thickness: 3px;
+    text-decoration-color: $black;
+    transition: clip-path 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+}

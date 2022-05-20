@@ -27,6 +27,7 @@ gem 'jquery-turbolinks'
 gem 'jquery-rails'
 # cloudinary -- images
 gem 'cloudinary', '~> 1.16.0'
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'pickadate-rails'
 
