@@ -11,11 +11,11 @@ $black: #363839;
 $lightgray: #9c9e9f;
 $gray: #bdc1c6;
 
-* {
+*#group {
   box-sizing: border-box;
 
   &::before,
-  &::after {
+  &::after#group {
     box-sizing: border-box;
   }
 }
@@ -29,7 +29,7 @@ $gray: #bdc1c6;
 //   min-height: 100vh;
 // }
 
-input[type="checkbox"] {
+input[type="checkbox"]#group {
   position: relative;
   width: 1.5em;
   height: 1.5em;
@@ -56,22 +56,22 @@ input[type="checkbox"] {
     opacity: 0;
   }
 
-  &:checked {
+  &:checked#group {
     color: $white;
     border-color: $light_blue;
     background: $light_blue;
 
-    &::before {
+    &::before#group {
       opacity: 1;
     }
 
-    ~label::before {
+    ~label::before#group {
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
   }
 }
 
-label {
+label#group {
   position: relative;
   cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
   font-size: 1.5em;
@@ -79,7 +79,7 @@ label {
   padding: 0 0.25em 0;
   user-select: none;
 
-  &::before {
+  &::before#group {
     position: absolute;
     content: attr(data-content);
     color: $lightgray;
@@ -88,5 +88,88 @@ label {
     text-decoration-thickness: 3px;
     text-decoration-color: $black;
     transition: clip-path 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+}
+
+// add user checks
+
+// .container {
+//   background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255, 255, 255, 0.50) 47%, rgba(0, 0, 0, 0.50) 100%);
+//   background-blend-mode: screen;
+// }
+
+// input[type="checkbox"]#check {
+//   position: absolute;
+//   visibility: hidden;
+//   width: 60px;
+//   height: 60px;
+//   z-index: 2;
+// }
+
+
+.checkbox#check {
+  position: relative;
+}
+
+input[type="checkbox"]#check {
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+  color: #363839;
+  border: 1px solid #bdc1c6;
+  border-radius: 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0;
+  cursor: url("https://img.icons8.com/dusk/50/000000/hand-cursor.png"), auto;
+  transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+}
+
+input[type="checkbox"]#check:checked {
+  border: 10px solid $lightest_blue;
+  animation: confirm 0.15s linear;
+  width: 0.65em;
+  height: 0.65em;
+  color: $lightest_blue;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  // transform: scale(0);
+  // transform-origin: bottom left;
+  // box-shadow: inset 1em 1em var(--form-control-color);
+  &:after {
+    width: 0.65em;
+    height: 0.65em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    line-height: 32px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: $lightest_blue;
+  }
+}
+
+label#check {
+  font-size: 32px;
+}
+
+
+@keyframes confirm {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95)
+  }
+
+  75% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }

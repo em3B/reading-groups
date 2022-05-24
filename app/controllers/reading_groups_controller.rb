@@ -19,11 +19,33 @@ class ReadingGroupsController < ApplicationController
     @reading_group = ReadingGroup.find(params[:id])
   end
 
+  def add_user
+    @reading_group = ReadingGroup.find(params[:id])
+    User.all.each do |u|
+      @reading_group.users << u if params[:todo] == 1
+    end
+  end
+
+  def delete_user
+    @reading_group = ReadingGroup.find(params[:id])
+    @user = User.where(id: @reading_group.user_id)
+    @reading_group.user_ids.include?(@user["id".to_i])
+    @reading_group.users.all.each do |u|
+      @reading_group.users << u if params[:todo] == 1
+    end
+  end
+
+  def update
+    add_user
+    delete_user
+    redirect_to edit_reading_group_path
+  end
+
   private
 
   def find_reading_group
     ReadingGroup.all.each do |reading_group|
-      @reading_group = reading_group if reading_group.users.include?(current_user)
+      @reading_group = reading_group if params[:todo] == 1
     end
   end
 

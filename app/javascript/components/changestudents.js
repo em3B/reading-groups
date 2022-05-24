@@ -7,7 +7,7 @@ function changeStudents() {
 
   studentsBtn.addEventListener("click", function() {
     $(".active").fadeOut();
-    heading.innerHTML = "Select students to leave this group (optional):";
+    heading.innerHTML = "";
     studentsForm.classList.remove("invisible");
     console.log(studentsForm.classList);
   })

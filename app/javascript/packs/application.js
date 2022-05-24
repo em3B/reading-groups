@@ -39,6 +39,7 @@ import {unlight} from '../components/unlight';
 import {scrollToEnd} from '../components/chatscroll';
 import {editGroup} from '../components/editgroup';
 import { changeStudents } from "../components/changestudents";
+import { checkBox } from "../components/checkbox";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -49,6 +50,7 @@ document.addEventListener('turbolinks:load', () => {
   const button = document.querySelector(".edit-group");
   const studentsBtn = document.querySelector("#change-students");
   const message = document.querySelector(".message-container");
+  const check = document.querySelector('input#check');
 
   if (element && cancel) {
     openForm();
@@ -67,5 +69,8 @@ document.addEventListener('turbolinks:load', () => {
   if (message) {
     scrollToEnd();
     initChatroomCable();
+  }
+  if (check) {
+    checkBox();
   }
 });
