@@ -1,7 +1,7 @@
 
 <div class="wrapper">
   <h1 class="text-center font-weight-bold text-white pt-5">Welcome, <%= current_user.name  %>!</h1>
-  <h1 class="text-center font-weight-bold text-white pt-5 instructions">What would you like to do with this reading group?</h1>
+  <h1 class="text-center font-weight-bold text-white pt-5 instructions pb-4">What would you like to do with this reading group?</h1>
 
     <%# options if you click on an existing group %>
 
@@ -29,16 +29,38 @@
   <%# if you click on "change students" %>
   <div class="invisible reading-group-form text-center pt-4">
 
-    <%= simple_form_for @reading_group do |f|  %>
+    <%= simple_form_for [ @reading_group ] do |f|  %>
 
-      <% @reading_group.users.each do |u| %>
-        <div class="text-center text-white">
-          <%= f.check_box :id, id: :todo, :default => false, 'data-content' => "#{u.name}", method: :delete %>
-          <%= f.label "#{u.name}", for: :todo, 'data-content' => "#{u.name}", method: :delete %>
+      <h1 class="text-center font-weight-bold text-white pt-5 instructions">Select students to leave this group (optional):</h1><br>
+
+      <div class="form-inputs pt-4">
+        <% @reading_group.users.all.each_with_index do |u| %>
+          <div class="text-center text-white" id="group">
+            <%= f.check_box :add_name, name: :todo, :default => false, 'data-content' => "#{u.name}", id: :group, as: :boolean, method: :delete_user %>
+            <%= f.label "#{u.name}", id: :group, for: :todo, 'data-content' => "#{u.name}", method: :delete_user %>
+          </div>
+        <% end %><br>
+
+        <h1 class="text-center font-weight-bold text-white pt-5 instructions">Select students to enter this group (optional):</h1><br>
+
+        <div class="add">
+          <% User.all.each do |u| %>
+            <% if @reading_group.users.all.include?(u) == false %>
+              <div class="text-center text-white container checkbox">
+                <%= f.check_box :delete_name, id: :check, name: :todo, :default => false, 'data-content' => "#{u.name}", as: :boolean, method: :add_user %>
+                <%= f.label "#{u.name}", for: :check, 'data-content' => "#{u.name}", style: "font-size:24px", method: :add_user %>
+              </div>
+            <% end %>
+          <% end %><br>
         </div>
-      <% end %><br>
+        </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Submit", class: "btn btn-default btn-primary" %>
+      </div>
 
     <% end %>
+
   </div>
 
   <div class="push"></div>

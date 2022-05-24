@@ -1,0 +1,19 @@
+$dyslexia_background: #FFFBF7;
+$lightest_blue: #E6F0F3;
+$light_blue: #C8E4EE;
+$light_orange: #F38A63;
+$coral: #F16B3A;
+$medium_orange: #DB6328;
+$dark_orange: #B13A1A;
+
+.reading-group-form {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: $dark_orange;
+  padding: 40px;
+  border-radius: 7px;
+  margin-bottom: 24px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
