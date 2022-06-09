@@ -36,7 +36,7 @@
       <div class="form-inputs pt-4">
         <% @reading_group.users.all.each_with_index do |u| %>
           <div class="text-center text-white" id="group">
-            <%= f.check_box :add_name, name: :todo, :default => false, 'data-content' => "#{u.name}", id: :group, as: :boolean, method: :delete_user %>
+            <%= f.check_box :user_id, name: :todo, :default => false, 'data-content' => "#{u.name}", id: :group, as: :boolean, method: :delete_user %>
             <%= f.label "#{u.name}", id: :group, for: :todo, 'data-content' => "#{u.name}", method: :delete_user %>
           </div>
         <% end %><br>
@@ -47,7 +47,7 @@
           <% User.all.each do |u| %>
             <% if @reading_group.users.all.include?(u) == false %>
               <div class="text-center text-white container checkbox">
-                <%= f.check_box :delete_name, id: :check, name: :todo, :default => false, 'data-content' => "#{u.name}", as: :boolean, method: :add_user %>
+                <%= f.check_box :user_id, id: :check, name: :todo, :default => false, 'data-content' => "#{u.name}", as: :boolean, method: :add_user %>
                 <%= f.label "#{u.name}", for: :check, 'data-content' => "#{u.name}", style: "font-size:24px", method: :add_user %>
               </div>
             <% end %>
