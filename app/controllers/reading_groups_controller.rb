@@ -28,10 +28,10 @@ class ReadingGroupsController < ApplicationController
 
   def delete_user
     @reading_group = ReadingGroup.find(params[:id])
-    # @user = User.where(id: @reading_group.user_id)
-    # @reading_group.user_ids.include?(@user["id".to_i])
-    @reading_group.users.all.each do |u|
-      @reading_group.users.all.delete(u) if params[:todo] == 1
+    @reading_group.users.all.each_with_index do |u, i|
+      @member = Member.where(user_id: u.id)
+      @member.first.reading_group_id = nil if params[:student][i + 1].to_i == 1
+      @reading_group.users.delete(u) if params[:student][i + 1].to_i == 1
     end
   end
 
