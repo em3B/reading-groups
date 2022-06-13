@@ -21,8 +21,12 @@ class ReadingGroupsController < ApplicationController
 
   def add_user
     @reading_group = ReadingGroup.find(params[:id])
-    User.all.each do |u|
-      @reading_group.users << u if params[:todo] == 1
+    @non_members = Member.all.where.not(reading_group_id: params[:id].to_i)
+    @non_members.each_with_index do |m, i|
+      @member = Member.where(user_id: m.user_id)
+      @user = User.where(id: m.user_id)
+      @member.first.reading_group_id = params[:id].to_i if params[:add_student][i + 1].to_i == 1
+      @reading_group.users << @user if params[:add_student][i + 1].to_i == 1
     end
   end
 

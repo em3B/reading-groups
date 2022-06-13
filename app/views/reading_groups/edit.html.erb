@@ -34,7 +34,7 @@
       <h1 class="text-center font-weight-bold text-white pt-5 instructions">Select students to leave this group (optional):</h1><br>
 
       <div class="form-inputs pt-4">
-        <% @reading_group.users.all.each_with_index do |u| %>
+        <% @reading_group.users.all.each do |u| %>
           <div class="text-center text-white" id="group">
             <%= f.check_box :user_id, name: "student[]", :default => false, 'data-content' => "#{u.name}", id: :group, as: :boolean, method: :delete_user %>
             <%= f.label "#{u.name}", id: :group, for: "student[]", 'data-content' => "#{u.name}", method: :delete_user %>
@@ -47,8 +47,8 @@
           <% User.all.each do |u| %>
             <% if @reading_group.users.all.include?(u) == false %>
               <div class="text-center text-white container checkbox">
-                <%= f.check_box :user_id, id: :check, name: "student[]", :default => false, 'data-content' => "#{u.name}", as: :boolean, method: :add_user %>
-                <%= f.label "#{u.name}", for: :check, 'data-content' => "#{u.name}", style: "font-size:24px", method: :add_user %>
+                <%= f.check_box :user_id, id: :check, name: "add_student[]", :default => false, 'data-content' => "#{u.name}", as: :boolean, method: :add_user %>
+                <%= f.label "#{u.name}", for: "add_student[]", 'data-content' => "#{u.name}", style: "font-size:24px", method: :add_user %>
               </div>
             <% end %>
           <% end %><br>
